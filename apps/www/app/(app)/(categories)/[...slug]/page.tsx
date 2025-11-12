@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import { notFound } from 'next/navigation'
 import { blocks } from '@/data/blocks'
 import BlockPreview from '@/components/block-preview'
-import { stringToNumber } from '@tailark/core/lib/utils'
+import { stringToNumber } from '@docsynapse/core/lib/utils'
 import CategoryNotFound from '@/components/category-not-found'
 
 interface PageProps {

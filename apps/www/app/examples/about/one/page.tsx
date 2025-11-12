@@ -1,7 +1,7 @@
-import { LogoIcon } from '@tailark/core/components/logo'
+import { LogoIcon } from '@docsynapse/core/components/logo'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 
 const members = [
     {

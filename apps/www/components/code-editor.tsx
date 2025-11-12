@@ -3,9 +3,9 @@ import { CheckIcon, ChevronDown, Copy } from 'lucide-react'
 import CodeBlock, { CodeBlockProps } from './code-block'
 import type { BundledLanguage } from 'shiki/bundle/web'
 import * as RadioGroup from '@radix-ui/react-radio-group'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 import { useCopyToClipboard } from '@/hooks/useClipboard'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 
 export type File = {
     name: string

@@ -1,7 +1,7 @@
 import { Cpu, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@tailark/core/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@tailark/core/ui/card'
+import { Button } from '@docsynapse/core/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@docsynapse/core/ui/card'
 import { Check } from 'lucide-react'
 
 const tableData = [

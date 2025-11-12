@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button, ButtonProps } from '@tailark/core/ui/button'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@tailark/core/ui/tooltip'
+import { Button, ButtonProps } from '@docsynapse/core/ui/button'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@docsynapse/core/ui/tooltip'
 import Link from 'next/link'
 
 export interface TooltipButtonProps extends Omit<ButtonProps, 'onClick'> {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 
 export const MCPLogo = ({ className }: { className?: string }) => (
     <svg

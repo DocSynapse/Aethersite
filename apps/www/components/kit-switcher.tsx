@@ -5,7 +5,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { BookOpen, Gem, MoonStar } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { getClientKits } from '@/lib/get-kits'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@tailark/core/ui/select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@docsynapse/core/ui/select'
 
 const kits = getClientKits()
 const STORAGE_KEY = 'selected-kit-id'

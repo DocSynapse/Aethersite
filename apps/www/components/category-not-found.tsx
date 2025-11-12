@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
-import { BorderBeam } from '@tailark/core/magicui/border-beam'
+import { BorderBeam } from '@docsynapse/core/magicui/border-beam'
 
 export default function CategoryNotFound({ categoryName, kitName }: { categoryName: string; kitName: string }) {
     const categoryDisplay = categoryName

@@ -1,6 +1,6 @@
 'use client'
 import React, { RefObject, useMemo } from 'react'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 import { clearIframeCache } from '@/lib/serviceWorker'
 
 interface IframeRendererProps {

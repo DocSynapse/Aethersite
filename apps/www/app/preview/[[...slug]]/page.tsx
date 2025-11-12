@@ -1,5 +1,5 @@
 import BlockRenderer from './block-renderer'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 import { use } from 'react'
 import { Metadata } from 'next'
 

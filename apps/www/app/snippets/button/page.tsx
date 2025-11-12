@@ -1,6 +1,6 @@
 import SnippetPreview from '@/components/snippet-preview'
 import { Button } from '@/components/snippets/buttons/button'
-import { ButtonProps } from '@tailark/core/ui/button'
+import { ButtonProps } from '@docsynapse/core/ui/button'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

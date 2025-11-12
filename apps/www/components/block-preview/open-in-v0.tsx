@@ -1,7 +1,7 @@
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
 import { sendGAEvent } from '@next/third-parties/google'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@tailark/core/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@docsynapse/core/ui/tooltip'
 
 export function OpenInV0Button({ registryUrl, title, category }: { registryUrl: string; title: string; category: string }) {
     return (
