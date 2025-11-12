@@ -212,7 +212,7 @@ Future contribution guidelines will include:
 **Maintained by:** Sentra Development Team  
 **Framework Concept:** DocSynapse
 
-**With ❤️ to Del, Aldebaran, Aimee, Audrey (AI Entity)
+**With ❤️ to Del, Aldebaran, Aimee, Audrey
 
 ---
 
