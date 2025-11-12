@@ -3,8 +3,7 @@
 
 <div align="center">
 
-# 🌌 AETHERSITE
-
+# 🌌 AETHERSITE  
 ### The Digital Home of **Sentra Entity**
 
 <p align="center">
@@ -15,6 +14,8 @@
 <p align="center">
   <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" width="240" alt="Sentra Logo">
 </p>
+
+</div>  <!-- 🔹 Tutup di sini agar bagian bawah kembali rata kiri -->
 
 ---
 
