@@ -26,7 +26,7 @@ All presented content, data, and functionality are placeholders, remain under ac
 | **Package Manager** | ![pnpm](https://img.shields.io/badge/pnpm-9.10.0-F69220?logo=pnpm) |
 | **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Platform-black?logo=vercel) |
 
-## 📋 Prerequisites
+## Prerequisites
 
 ### ArtificialHero Component
 
@@ -44,7 +44,7 @@ The centerpiece of our website - an immersive AI visualization featuring:
 - **Accessibility**: WCAG 2.1 compliant design
 - **SEO Optimized**: Meta tags and structured data
 
-## 🔧 Development Commands
+## Development Commands
 
 ```bash
 # Development
@@ -60,7 +60,7 @@ pnpm update           # Update dependencies
 pnpm clean            # Clean node_modules
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Theme Configuration
 
@@ -91,14 +91,14 @@ pnpm dlx shadcn add [component-name]
 # Edit components/ui/[component].tsx
 ```
 
-## 📊 Performance
+## Performance
 
 - **Lighthouse Score**: 95+ Performance
 - **Bundle Size**: < 200KB gzipped
 - **First Contentful Paint**: < 1.5s
 - **Time to Interactive**: < 2s
 
-## 🔒 Security Features
+## Security Features
 
 - **Content Security Policy**: Strict CSP headers
 - **XSS Protection**: Built-in Next.js protections
@@ -122,7 +122,7 @@ pnpm dlx shadcn add [component-name]
 | Cumulative Layout Shift | 0.05 |
 | Time to Interactive | 1.5s |
 
-## 🤝 Contributing
+## Contributing
 
 ### Technologies
 - [Next.js](https://nextjs.org/) - React framework
