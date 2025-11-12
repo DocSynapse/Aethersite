@@ -1,6 +1,1 @@
-export { default as Logo } from './components/logo'
-export * from './ui'
-export * from './lib'
-export * from './components'
-export * from './magicui'
-export * from './motion-primitives'
+export { Logo } from './components/logo'
