@@ -4,7 +4,7 @@ import { ChartBarIncreasingIcon, Database, Fingerprint, IdCard } from 'lucide-re
 import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { BorderBeam } from '@docsynapse/core/magicui/border-beam'
+import { BorderBeam } from '@docsynapse/core'
 
 export default function Features() {
     type ImageKey = 'item-1' | 'item-2' | 'item-3' | 'item-4'
