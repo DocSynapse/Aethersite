@@ -12,9 +12,10 @@
   Next-Generation AI Healthcare Assistant Platform
 </p>
 
-<img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" alt="Sentra Architecture" width="800"/>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" width="240" alt="Sentra Logo">
+</p>
 
-</div>
 
 ---
 
