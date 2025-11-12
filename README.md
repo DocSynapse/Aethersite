@@ -1,4 +1,4 @@
-# SENTRA Aethersite
+SENTRA Aethersite
 
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
@@ -105,7 +105,7 @@ pnpm dlx shadcn add [component-name]
 - **HIPAA Compliance**: Healthcare data protection standards
 - **HTTPS Only**: Production deployments use HTTPS
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome/Edge 90+
 - Firefox 88+
@@ -113,7 +113,7 @@ pnpm dlx shadcn add [component-name]
 - Mobile Safari 14+
 - Chrome Mobile 90+
 
-## 📈 Performance Metrics
+## Performance Metrics
 
 | Metric | Value |
 |--------|-------|
