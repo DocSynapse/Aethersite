@@ -2,8 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@docsynapse/core/ui/button'
 import { HeroHeader } from './header'
-import { InfiniteSlider } from '@docsynapse/core/motion-primitives/infinite-slider'
-import { ProgressiveBlur } from '@docsynapse/core/motion-primitives/progressive-blur'
+import { InfiniteSlider, ProgressiveBlur } from '@docsynapse/core'
 import { ChevronRight } from 'lucide-react'
 
 export default function HeroSection() {
