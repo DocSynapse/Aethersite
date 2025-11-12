@@ -1,6 +1,15 @@
 Sentra Aethersite
 
-![Description](https://drive.google.com/uc?export=view&id=1TP4eC2rkwpS-nMh-PqT_V0JJllrnTGUZ)
+<!-- Responsive dengan max-width -->
+<img src="https://drive.google.com/uc?export=view&id=1TP4eC2rkwpS-nMh-PqT_V0JJllrnTGUZ" 
+     alt="System Architecture"
+     style="max-width: 800px; width: 100%; height: auto;">
+
+<!-- Dengan border dan shadow -->
+<img src="https://drive.google.com/uc?export=view&id=1TP4eC2rkwpS-nMh-PqT_V0JJllrnTGUZ" 
+     alt="System Architecture"
+     style="max-width: 1000px; width: 100%; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+     
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
   <img src="https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react" alt="React"/>
