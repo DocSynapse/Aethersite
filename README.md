@@ -1,4 +1,4 @@
-# 🏥 SENTRA Healthcare AI Platform
+# 🏥 SENTRA Aethersite
 
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
