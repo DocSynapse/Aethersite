@@ -82,3 +82,5 @@ apps/www/app/snippets/
 # Keep root page and hero section
 # apps/www/app/(app)/page.tsx (included)
 # apps/www/app/(app)/hero/page.tsx (included)
+
+.vercel

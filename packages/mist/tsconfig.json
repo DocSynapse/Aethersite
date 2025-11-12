@@ -1,9 +1,9 @@
 {
-  "extends": "@tailark/ts-config/base.json",
+  "extends": "@docsynapse/ts-config/base.json",
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@tailark/core/*": ["./../core/src/*"],
+      "@docsynapse/core/*": ["./../core/src/*"],
       "@mist/*" : ["./*"]
     }
   },
