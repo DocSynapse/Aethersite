@@ -82,10 +82,10 @@ Dynamic AI character with personality engine responding to user interactions in 
 ### Visual Implementation
 
 ```
-[PLACEHOLDER: ArtificialHero Component Screenshot]
+[[PLACEHOLDER: ArtificialHero Component Screenshot]
 Dimensions: 1920x1080px
 Format: PNG with transparency
-Content: Full-screen view of AUDREY entity with annotation layer
+Content: Full-screen view of AUDREY entity with annotation layer](https://drive.google.com/file/d/1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl/view?usp=drive_link)
 ```
 
 ---
