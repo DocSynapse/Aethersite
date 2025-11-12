@@ -29,7 +29,7 @@ const defaultItemVariants: Variants = {
     visible: { opacity: 1 },
 }
 
-const presetVariants: Record<PresetType, Variants> = {
+const presetVariants: Record<AnimatedGroupPresetType, Variants> = {
     fade: {},
     slide: {
         hidden: { y: 20 },

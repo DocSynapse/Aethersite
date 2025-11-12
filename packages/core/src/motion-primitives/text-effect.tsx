@@ -56,7 +56,7 @@ const defaultItemVariants: Variants = {
     exit: { opacity: 0 },
 }
 
-const presetVariants: Record<PresetType, { container: Variants; item: Variants }> = {
+const presetVariants: Record<TextEffectPresetType, { container: Variants; item: Variants }> = {
     blur: {
         container: defaultContainerVariants,
         item: {
