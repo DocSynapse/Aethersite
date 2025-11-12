@@ -1,21 +1,21 @@
-<div align="center" style="margin: 60px 0;">
-  <h1 style="font-size: 4em; 
-             font-weight: 800; 
-             letter-spacing: 2px; 
-             margin-bottom: 20px;
-             color: #1e293b;">
+<div align="center" style="padding: 80px 0 60px 0;">
+  <h1 style="font-size: 4.5em; 
+             font-weight: 900; 
+             letter-spacing: 3px; 
+             margin: 0;
+             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+             background-clip: text;">
     SENTRA AETHERSITE
   </h1>
-  <p style="font-size: 1.3em; 
+  <p style="font-size: 1.4em; 
             color: #64748b; 
-            font-weight: 400;
-            letter-spacing: 0.5px;">
-    <em>Technical Documentation for Prototype Platform</em>
+            margin-top: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;">
+    Technical Documentation for Prototype Platform
   </p>
-  <hr style="width: 200px; 
-             margin: 30px auto; 
-             border: none; 
-             border-top: 2px solid #e2e8f0;">
 </div>
 
 <!-- Dengan border dan shadow -->
