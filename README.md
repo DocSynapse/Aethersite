@@ -137,12 +137,6 @@ pnpm dlx shadcn add [component-name]
 - Dedicated to advancing medical AI technology
 - Empowering doctors to focus on patient care
 
-## 📞 Contact
-
-- **Project Maintainer**: [Your Name](mailto:your.email@example.com)
-- **Issues & Bugs**: [GitHub Issues](https://github.com/your-username/tailark-website/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/your-username/tailark-website/discussions)
-
 ---
 
 <div align="center">
