@@ -8,9 +8,6 @@
   <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
 </div>
 
-**SENTRA** is a cutting-edge healthcare AI platform that integrates advanced neural algorithms with clinical expertise to transform primary care services. Through **ADDI** (Augmented Artificial Intelligent Diagnostic Integrated), we ensure smarter, safer, and more efficient patient care.
-
-Meet **AUDREY** - our **Augmented Understanding & Dynamic Reasoning Entity**, an AI visualization that demonstrates the evolution of artificial intelligence empathy and understanding in healthcare contexts.
 
 This website is a functional prototype developed for the sole purpose of evaluating design, user flow (UX), and initial technical testing.
 
@@ -30,82 +27,6 @@ All presented content, data, and functionality are placeholders, remain under ac
 | **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Platform-black?logo=vercel) |
 
 ## 📋 Prerequisites
-
-Ensure you have the following installed:
-
-- **Node.js** >= 18.0.0
-- **pnpm** >= 9.0.0
-- **Git** for version control
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/tailark-website.git
-cd tailark-website
-```
-
-### 2. Install Dependencies
-
-```bash
-pnpm install
-```
-
-### 3. Environment Setup
-
-Create a `.env.local` file in the root directory:
-
-```env
-# Development
-NODE_ENV=development
-PORT=3000
-
-# Production (optional)
-NODE_ENV=production
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-```
-
-### 4. Run Development Server
-
-```bash
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-### 5. Build for Production
-
-```bash
-pnpm build
-pnpm start
-```
-
-## 📁 Project Structure
-
-```
-aethersite/
-├── apps/
-│   └── www/
-│       ├── app/                    # Next.js App Router
-│       │   ├── (app)/
-│       │   │   ├── page.tsx       # Homepage route
-│       │   │   └── layout.tsx     # Root layout
-│       │   └── globals.css        # Global styles
-│       ├── components/
-│       │   └── ui/
-│       │       ├── artificial-hero.tsx  # AI visualization component
-│       │       └── ...                 # Other UI components
-│       ├── public/                 # Static assets
-│       └── package.json
-├── packages/                      # Monorepo packages
-├── package.json                   # Root package configuration
-├── pnpm-workspace.yaml          # Workspace configuration
-├── turbo.json                   # Turborepo configuration
-└── README.md
-```
-
-## 🎯 Key Components
 
 ### ArtificialHero Component
 
@@ -202,57 +123,6 @@ pnpm dlx shadcn add [component-name]
 | Time to Interactive | 1.5s |
 
 ## 🤝 Contributing
-
-We welcome contributions! Please follow our guidelines:
-
-### Development Workflow
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
-
-### Code Standards
-
-- Use **TypeScript** for all new code
-- Follow **ESLint** configuration
-- Write **meaningful commit messages**
-- Include **tests** for new features
-- Ensure **accessibility** standards
-
-### Pull Request Template
-
-```markdown
-## Description
-Brief description of changes
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
-
-## Testing
-- [ ] Code compiles without errors
-- [ ] All tests pass
-- [ ] Manual testing completed
-
-## Checklist
-- [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Credits & Attribution
-
-### Core Team
-- **Dr. Ferdi Sentra** - Founder & Chief Architect
-- Inspired by commitment to sustainable healthcare innovation
 
 ### Technologies
 - [Next.js](https://nextjs.org/) - React framework
