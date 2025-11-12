@@ -59,7 +59,7 @@ export default function EarlyAccess() {
                             <p>Install blocks from the Mist kit the same way:</p>
 
                             <CodeBlock
-                                code="pnpm dlx shadcn add @tailark/mist-hero-section-1"
+                                code="pnpm dlx shadcn add @docsynapse/mist-hero-section-1"
                                 lang="bash"
                                 className="**:!min-h-auto **:!h-auto my-3 *:rounded-lg *:!border-l-0"
                             />

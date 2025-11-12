@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
-import { duskKitBlockMap } from '@tailark/dusk/blocks'
-import { mistKitBlockMap } from '@tailark/mist/blocks'
+import { duskKitBlockMap } from '@docsynapse/dusk/blocks'
+import { mistKitBlockMap } from '@docsynapse/mist/blocks'
 import React from 'react'
 import { Suspense } from 'react'
 
