@@ -102,14 +102,11 @@ Dynamic AI character with personality engine responding to user interactions in 
 - WebGL fallback for devices with limitations
 
 ### Visual Implementation
-
-```
 <div align="center">
   <img src="https://drive.google.com/uc?export=view&id=1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl" 
        alt="Sentra Architecture" 
        width="1000">
 </div>
----
 
 ## SYSTEM CHARACTERISTICS
 
