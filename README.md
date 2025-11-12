@@ -1,430 +1,531 @@
-<div align="center" style="padding: 80px 0 60px 0;">
-  <h1 style="font-size: 4.5em; 
-             font-weight: 900; 
-             letter-spacing: 3px; 
-             margin: 0;
-             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-             -webkit-background-clip: text;
-             -webkit-text-fill-color: transparent;
-             background-clip: text;">
-    SENTRA AETHERSITE
-  </h1>
-  <p style="font-size: 1.4em; 
-            color: #64748b; 
-            margin-top: 24px;
-            font-weight: 300;
-            letter-spacing: 1px;">
-    Technical Documentation for Prototype Platform by DocSynapse
-  </p>
-</div>
-
-<!-- Dengan border dan shadow -->
 <div align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" 
-       alt="Sentra Architecture">
-</div>
-     
-<div align="center">
-  <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react" alt="React"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.6-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS"/>
-  <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
-</div>
 
-# SENTRA AETHERSITE
-## Technical Documentation for Prototype Platform
+# 🌌 AETHERSITE
+
+### Rumah Digital dari **Sentra Entity**
+
+<p align="center">
+  <strong>PROTOTYPE - DALAM PENGEMBANGAN</strong><br/>
+  Platform AI Healthcare Assistant Generasi Berikutnya
+</p>
+
+<img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" alt="Sentra Architecture" width="800"/>
+
+</div>
 
 ---
 
-## EXECUTIVE SUMMARY
+## ⚠️ STATUS PENGEMBANGAN
 
-Sentra Aethersite is a functional prototype engineered for comprehensive evaluation of design architecture, user experience flows, and fundamental technical validation. All presented content, data, and functionality are placeholders under active development and do not represent the final Sentra product.
+> **PENTING:** Ini adalah **PROTOTYPE AETHERSITE** - bukan produk final. Semua fitur, data, dan fungsionalitas yang ditampilkan adalah placeholder yang sedang dalam pengembangan aktif dan tidak merepresentasikan produk Sentra yang final.
 
-**Confidentiality Status:** This document and associated platform are confidential, intended exclusively for internal purposes or authorized limited review.
-
-**Version:** 0.1.0 (Development Phase)  
-**Last Updated:** November 2025  
-**Maintained By:** Sentra Development Team
+**Versi:** 0.1.0 (Prototype Phase)
+**Status:** Development/Testing
+**Terakhir Diperbarui:** November 2025
+**Dikembangkan oleh:** Sentra Development Team (DocSynapse)
 
 ---
 
-## TECHNOLOGY ARCHITECTURE
+## 📖 Tentang Aethersite
+
+**Aethersite** adalah platform web prototype yang menjadi rumah digital dari **Sentra Entity** - sebuah AI healthcare assistant yang dirancang untuk membantu tenaga medis dalam memberikan pelayanan kesehatan yang lebih baik.
+
+### Apa itu Sentra Entity?
+
+Sentra Entity adalah AI assistant berbasis karakter yang bernama **AUDREY** (Advanced Unified Digital Resource Entity for You), yang hadir sebagai companion digital untuk dokter dan tenaga kesehatan. Melalui Aethersite, Sentra Entity menampilkan:
+
+- 🤖 **AI Personality Engine** - Karakter AI yang responsif dan interaktif
+- 💬 **Natural Conversation** - Interaksi yang natural dan human-like
+- 🏥 **Healthcare-Focused** - Dirancang khusus untuk konteks medis
+- 🎨 **Visual Character** - Representasi visual AI melalui komponen ArtificialHero
+
+### Tujuan Prototype
+
+Platform ini dikembangkan untuk:
+1. ✅ Validasi konsep desain dan arsitektur
+2. ✅ Testing user experience flows
+3. ✅ Evaluasi performa teknis
+4. ✅ Gathering feedback untuk pengembangan selanjutnya
+
+**Catatan Kerahasiaan:** Dokumen dan platform ini bersifat konfidensial, ditujukan eksklusif untuk keperluan internal atau review terbatas yang telah diotorisasi.
+
+---
+
+## 🚨 MASALAH YANG TERIDENTIFIKASI
+
+Berikut adalah daftar komprehensif masalah yang ditemukan dalam codebase saat ini:
+
+### 🔴 CRITICAL ISSUES
+
+#### 1. **Inkonsistensi Naming: "Tailark" vs "Aethersite"**
+
+**MASALAH UTAMA:** Seluruh codebase masih menggunakan nama "Tailark" dari template original, belum diubah menjadi "Aethersite/Sentra".
+
+**Lokasi yang perlu diupdate:**
+
+**Package Names (6 files):**
+- `/package.json` → name: "tailark"
+- `/apps/www/package.json` → name: "@tailark/www"
+- `/packages/core/package.json` → name: "@tailark/core"
+- `/packages/dusk-kit/package.json` → name: "@tailark/dusk"
+- `/packages/mist-kit/package.json` → name: "@tailark/mist"
+- `/packages/ts-config/package.json` → name: "@tailark/ts-config"
+
+**TypeScript Configurations (5+ files):**
+- Semua path aliases menggunakan "@tailark/*"
+- Perlu update ke "@aethersite/*" atau "@sentra/*"
+
+**Domain References:**
+- `apps/www/next.config.ts:17` → "pro.tailark.com"
+- `apps/www/app/sitemap.ts:5` → "https://tailark.com"
+- `apps/www/app/robots.ts:10` → "https://tailark.com/sitemap.xml"
+- `apps/www/app/layout.tsx:19,21` → Metadata mentions "Tailark"
+
+**Asset Files:**
+- `/apps/www/public/mist/tailark.png`
+- `/apps/www/public/mist/tailark-2.png`
+- `/apps/www/public/mist/tailark-3.png`
+
+**Total Impact:** 147+ files dengan referensi "tailark"
+
+#### 2. **Legacy Code: "cnblocks" References**
+
+File-file berikut masih mengandung referensi ke "cnblocks" (dari project template):
+- `apps/www/public/sw.js:1` → CACHE_NAME = 'cnblocks-iframe-cache-v2'
+- `apps/www/lib/serviceWorker.ts:57` → 'cnblocks-iframe-cache-v1'
+
+**⚠️ Cache version mismatch:** sw.js uses v2, serviceWorker.ts uses v1
+
+### 🟡 CONFIGURATION ISSUES
+
+#### 3. **Duplicate ESLint Configuration**
+- `apps/www/` memiliki `.eslintrc.json` DAN `eslint.config.mjs`
+- Berpotensi konflik, sebaiknya gunakan salah satu
+
+#### 4. **Workspace Configuration Duplication**
+- `apps/www/package.json` memiliki workspaces config (seharusnya hanya di root)
+- Scripts diduplikasi dari root package.json
+
+#### 5. **Dependency Version Inconsistencies**
+- **Next.js:** dusk-kit (15.3.2) vs mist-kit (15.3.1)
+- **React:** www (^19.1.0) vs dusk/mist-kit (^19.0.0)
+- **Tailwind PostCSS:** Berbeda-beda di setiap package
+
+#### 6. **Suspicious Dependencies**
+```json
+"fs": "0.0.1-security",  // Security placeholder, shouldn't be needed
+"google": "link:@next/third-parties/google",  // Invalid link syntax
+"third-parties": "link:@next/third-parties"  // Invalid link syntax
+```
+Lokasi: `apps/www/package.json:39,40,58`
+
+#### 7. **Missing/Invalid Config Files**
+- `apps/www/components.json:7` → References "tailwind.config.ts" yang tidak exist
+- (Tailwind v4 menggunakan metode konfigurasi berbeda)
+
+### 🟠 DOCUMENTATION ISSUES
+
+#### 8. **Version Mismatches dalam Dokumentasi**
+- README claims "Next.js 14+" tapi actual version: "15.3.2"
+- README claims "Tailwind CSS 3+" tapi actual version: "4.1.6"
+
+#### 9. **Missing Commands**
+README mendokumentasikan commands yang tidak exist:
+```bash
+pnpm type-check  # Script tidak ada di package.json
+pnpm clean       # Script tidak ada di package.json
+```
+
+#### 10. **Performance Claims Without Evidence**
+- README claims "85%+ code coverage"
+- **FAKTA:** Tidak ada test files di seluruh codebase
+- Tidak ada `.test.*` atau `.spec.*` files
+
+#### 11. **Empty Documentation**
+- `apps/www/README.md` → Completely empty (1 byte)
+
+### 🟢 MINOR ISSUES
+
+#### 12. **Incomplete Package Metadata**
+- `packages/ts-config/package.json` → Missing author info
+- References `index.js` yang tidak exist
+
+#### 13. **TypeScript Config Inconsistencies**
+- Core package uses project references
+- Other packages don't follow this pattern
+- Inconsistent targets (ES2020 vs others)
+
+### ⚪ MISSING INFRASTRUCTURE
+
+#### 14. **No Testing Infrastructure**
+- ❌ No test files
+- ❌ No Jest/Vitest config
+- ❌ No CI/CD pipeline (.github/workflows)
+- ❌ No Docker/deployment configs
+- ❌ No contributing guidelines
+- ❌ No issue/PR templates
+
+#### 15. **Security Considerations**
+- Google Analytics ID hardcoded: "G-6KY6TLKXKY"
+- Service worker caching may cache sensitive data
+- No visible CSP headers
+- No CORS configuration
+
+#### 16. **Code Quality Tools**
+- No standardized Prettier config
+- No Husky/Git hooks
+- No lint-staged configuration
+- Minimal Turbo.json configuration
+
+---
+
+## 🏗️ ARSITEKTUR TEKNOLOGI
+
+### Tech Stack
+
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.6-38B2AC?style=for-the-badge&logo=tailwind-css)
+![GSAP](https://img.shields.io/badge/GSAP-3.13.0-88CE02?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)
+
+</div>
 
 ### Framework Foundation
 
-**Primary Framework:** Next.js 14+ with App Router  
-Implementation of React Server Components for optimized rendering performance and responsive user experience.
+**Primary Framework:** Next.js 15+ dengan App Router
+- React Server Components untuk optimasi rendering
+- Streaming dan Suspense boundaries
+- Automatic code splitting
 
-**Programming Language:** TypeScript 5+  
-Type-safe system ensuring code integrity and reducing runtime errors through static analysis.
+**Programming Language:** TypeScript 5+
+- Type-safe development
+- Static analysis untuk error prevention
+- Enhanced IDE support
 
-**Styling Engine:** Tailwind CSS 3+  
-Utility-first CSS framework enabling design consistency with granularly customizable configuration.
+**Styling Engine:** Tailwind CSS 4+
+- Utility-first CSS framework
+- Konsistensi desain dengan customizable configuration
+- JIT (Just-in-Time) compilation
 
-### Components and Animation
+### Components & Animation
 
-**UI Component Libraries:**  
-- Tailark UI: Healthcare-specific design system
-- shadcn/ui: Fully customizable headless components
+**UI Component Libraries:**
+- **Tailark UI** (to be renamed): Healthcare-specific design system
+- **shadcn/ui**: Customizable headless components
+- **Radix UI**: Accessible component primitives
 
-**Animation Engine:** GSAP (GreenSock Animation Platform)  
-Provides precision control over animation timelines and optimal rendering performance.
+**Animation Engine:** GSAP 3.13+
+- Precision animation control
+- Timeline orchestration
+- ScrollTrigger untuk scroll-based animations
+- Optimal rendering performance
 
-### Infrastructure and Deployment
+### Infrastructure
 
-**Package Manager:** pnpm  
-Efficient dependency management strategy with symbolic linking to optimize disk space.
+**Package Manager:** pnpm 9.10.0
+- Efficient dependency management
+- Symbolic linking untuk optimasi disk space
+- Monorepo support via workspaces
 
-**Deployment Platform:** Vercel  
-Edge network deployment with automatic scaling and zero-configuration continuous integration.
+**Deployment:** Vercel
+- Edge network deployment
+- Automatic scaling
+- Zero-config CI/CD
 
 ---
 
-## CRITICAL COMPONENT: ARTIFICIALHERO
+## ⭐ KOMPONEN KUNCI: ArtificialHero
 
 ### Technical Overview
 
-ArtificialHero is the central component serving as the visual and interactive representation of Sentra's AI entity. This component integrates multiple technology layers:
+**ArtificialHero** adalah komponen sentral yang merepresentasikan visual dan interaktif dari Sentra's AI Entity (AUDREY).
 
-**AUDREY Entity Implementation**  
-Dynamic AI character with personality engine responding to user interactions in real-time.
+**Fitur Utama:**
+- 🎭 **AUDREY Entity Implementation** - AI character dengan personality engine
+- 🎨 **Canvas-based Rendering** - Optimal performance
+- ✨ **GSAP Animation** - Smooth timeline orchestration
+- 📜 **Scroll-triggered Effects** - Interactive user experience
+- 🚀 **Performance Optimized** - Adaptive frame rate
 
-**Animation Architecture**  
-- Canvas-based rendering for optimal performance
-- GSAP-powered visual effects with timeline orchestration
-- Scroll-triggered animations using ScrollTrigger plugin
-- Adaptive frame rate based on device capability
+**Performance Strategy:**
+- Lazy loading untuk heavy assets
+- Progressive enhancement
+- WebGL fallback untuk legacy devices
 
-**Performance Optimization Strategy**  
-- Lazy loading for heavy assets
-- Progressive enhancement for legacy browsers
-- WebGL fallback for devices with limitations
-
-### Visual Implementation
 <div align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl" 
-       alt="Sentra Architecture" 
-       width="1000">
+  <img src="https://drive.google.com/uc?export=view&id=1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl" alt="Sentra Architecture" width="800"/>
 </div>
 
-## SYSTEM CHARACTERISTICS
-
-### Design and Accessibility
-
-**Typography System**  
-Fluid typography using CSS clamp() for seamless responsiveness across all viewports.
-
-**Color Palette**  
-Dark theme with healthcare-specific color psychology, optimized for extended reading readability.
-
-**Accessibility Compliance**  
-WCAG 2.1 Level AA compliance with focus on:
-- Keyboard navigation
-- Screen reader compatibility
-- Color contrast ratios
-- Focus indicators
-
-**SEO Architecture**  
-- Semantic HTML structure
-- Dynamic meta tag generation
-- Structured data implementation (JSON-LD)
-- Open Graph protocol integration
-
-### System Visualization
-
-```
-[PLACEHOLDER: System Architecture Diagram]
-Dimensions: 1600x900px
-Format: SVG or high-res PNG
-Content: Flow diagram showing interactions between:
-- Client Layer (Browser)
-- Application Layer (Next.js)
-- Component Layer (React)
-- Styling Layer (Tailwind)
-- Animation Layer (GSAP)
-```
-
 ---
 
-## COMMAND LINE INTERFACE
+## 🚀 DEVELOPMENT GUIDE
 
-### Development Workflow
+### Prerequisites
 
 ```bash
-pnpm dev
+# Node.js 20+ required
+node --version
+
+# pnpm required
+npm install -g pnpm@9.10.0
 ```
-Runs development server on localhost:3000 with hot module replacement active.
+
+### Installation
 
 ```bash
-pnpm build
-```
-Compiles production-ready bundle with full optimization including code splitting and tree shaking.
+# Clone repository
+git clone <repository-url>
+cd Aethersite
 
-```bash
-pnpm start
-```
-Runs production server from previous build output.
-
-```bash
-pnpm lint
-```
-Executes ESLint for static code analysis and enforcement of coding standards.
-
-```bash
-pnpm type-check
-```
-Performs TypeScript compilation check without emitting output files, validating type safety.
-
-### Package Management
-
-```bash
+# Install dependencies
 pnpm install
 ```
-Installs dependencies based on lockfile for reproducible builds.
+
+### Development Commands
 
 ```bash
-pnpm update
-```
-Updates dependencies to latest minor/patch versions according to semver specification.
+# Start development server (localhost:3000)
+pnpm dev
 
-```bash
-pnpm clean
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run linter
+pnpm lint
+
+# Build registry components
+pnpm registry:build
 ```
-Removes node_modules and cache for clean state installation.
+
+**Note:** Commands `pnpm type-check` dan `pnpm clean` yang disebutkan di dokumentasi sebelumnya **belum diimplementasikan**.
+
+### Project Structure
+
+```
+Aethersite/
+├── apps/
+│   └── www/                 # Main web application
+│       ├── app/            # Next.js app directory
+│       ├── components/     # React components
+│       ├── lib/           # Utility functions
+│       └── public/        # Static assets
+├── packages/
+│   ├── core/              # Core components
+│   ├── dusk-kit/          # Dark theme kit
+│   ├── mist-kit/          # Light theme kit
+│   └── ts-config/         # Shared TS config
+└── package.json           # Root package config
+```
 
 ---
 
-## PLATFORM CUSTOMIZATION
+## 🎨 DESIGN SYSTEM
 
-### Theme Configuration
+### Typography
 
-Sentra's design system uses token-based configuration enabling visual consistency across the platform:
+Fluid typography menggunakan CSS clamp() untuk responsiveness:
+- **Font Family:** Inter (sans-serif), JetBrains Mono (monospace)
+- **Scaling:** Responsive dari mobile hingga desktop
+
+### Color Palette
+
+Dark theme dengan healthcare-specific color psychology:
 
 ```typescript
-const sentraTheme = {
-  colors: {
-    primary: {
-      50: '#eff6ff',
-      100: '#dbeafe',
-      200: '#bfdbfe',
-      300: '#93c5fd',
-      400: '#60a5fa',
-      500: '#3b82f6',
-      600: '#2563eb',
-      700: '#1d4ed8',
-      800: '#1e40af',
-      900: '#1e3a8a',
-      950: '#172554'
-    },
-    healthcare: {
-      trust: '#0ea5e9',
-      vitality: '#10b981',
-      precision: '#8b5cf6',
-      warmth: '#f59e0b'
-    }
-  },
-  typography: {
-    fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
-      mono: ['JetBrains Mono', 'monospace']
-    }
+colors: {
+  healthcare: {
+    trust: '#0ea5e9',      // Sky blue - kepercayaan
+    vitality: '#10b981',   // Green - vitalitas
+    precision: '#8b5cf6',  // Purple - presisi
+    warmth: '#f59e0b'      // Orange - kehangatan
   }
 }
 ```
 
-### Component Extension
+### Accessibility
 
-```bash
-pnpm dlx shadcn add button
-pnpm dlx shadcn add dialog
-pnpm dlx shadcn add dropdown-menu
-```
-
-Each component can be customized through files located at `components/ui/[component].tsx` while maintaining accessibility standards.
-
-```
-[PLACEHOLDER: Component Showcase Grid]
-Dimensions: 1400x800px
-Format: PNG
-Content: 3x3 grid displaying key UI components in various states
-(default, hover, active, disabled)
-```
+Target compliance: **WCAG 2.1 Level AA**
+- ✅ Keyboard navigation
+- ✅ Screen reader compatibility
+- ✅ Color contrast ratios
+- ✅ Focus indicators
 
 ---
 
-## PERFORMANCE AND METRICS
+## 📊 PERFORMANCE TARGETS
 
-### Performance Benchmarks
+| Metric | Target | Status |
+|--------|--------|--------|
+| First Contentful Paint | < 1.5s | ⚠️ To be measured |
+| Largest Contentful Paint | < 2.5s | ⚠️ To be measured |
+| Time to Interactive | < 2.0s | ⚠️ To be measured |
+| Cumulative Layout Shift | < 0.1 | ⚠️ To be measured |
+| Total Blocking Time | < 200ms | ⚠️ To be measured |
 
-| Metric | Target | Actual | Status |
-|--------|--------|--------|--------|
-| First Contentful Paint | < 1.5s | 1.2s | Optimal |
-| Largest Contentful Paint | < 2.5s | 1.8s | Optimal |
-| Time to Interactive | < 2.0s | 1.5s | Optimal |
-| Cumulative Layout Shift | < 0.1 | 0.05 | Excellent |
-| Total Blocking Time | < 200ms | 150ms | Optimal |
-
-**Lighthouse Score:** 95+ (Performance, Accessibility, Best Practices, SEO)  
-**Bundle Size:** < 200KB gzipped (initial load)  
-**Code Coverage:** 85%+ (unit tests)
-
-### Performance Visualization
-
-```
-[PLACEHOLDER: Performance Timeline Graph]
-Dimensions: 1600x600px
-Format: Interactive SVG or PNG
-Content: Timeline visualization showing:
-- Page load phases
-- Resource loading waterfall
-- Critical rendering path
-- Interactive timeline markers
-```
+**Note:** Performance metrics masih perlu diukur dan divalidasi pada prototype saat ini.
 
 ---
 
-## SECURITY AND COMPLIANCE
+## 🔒 SECURITY & COMPLIANCE
 
 ### Security Implementation
 
-**Content Security Policy (CSP)**  
-Strict headers limiting resource sources that can be loaded, preventing XSS attacks.
+**Content Security Policy (CSP)**
+Strict headers untuk mencegah XSS attacks (perlu diimplementasikan)
 
-**Cross-Site Scripting Protection**  
-Next.js built-in XSS protection through automatic HTML escaping and sanitization.
-
-**HIPAA Compliance Framework**  
-Implementation of healthcare data protection standards including:
-- Data encryption at rest and in transit
-- Audit logging for data access
+**HIPAA Compliance Framework** (Planned)
+- Data encryption at rest dan in transit
+- Audit logging untuk data access
 - Role-based access control (RBAC)
 - Secure session management
 
-**Transport Security**  
-Mandatory HTTPS for all production deployments with TLS 1.3.
+**Transport Security**
+HTTPS mandatory dengan TLS 1.3 di production
 
-### Security Architecture
-
-```
-[PLACEHOLDER: Security Layer Diagram]
-Dimensions: 1400x900px
-Format: SVG or PNG
-Content: Multi-layer security architecture showing:
-- Edge security (Vercel)
-- Application security (Next.js)
-- Data security (Encryption)
-- Access control (RBAC)
-```
+### ⚠️ Security Concerns (Current)
+- Google Analytics ID hardcoded di `layout.tsx`
+- Service worker caching strategy perlu review
+- CSP headers belum terlihat
+- CORS configuration belum ada
 
 ---
 
-## BROWSER COMPATIBILITY
+## 🗺️ ROADMAP
 
-### Minimum Requirements
+### Phase 1: Foundation (CURRENT - Q4 2025)
+- [x] Prototype development
+- [x] Core functionality implementation
+- [x] Basic design system
+- [ ] Naming migration (Tailark → Aethersite)
+- [ ] Fix critical issues
+- [ ] Testing infrastructure
 
-| Browser | Version | Support Level |
-|---------|---------|---------------|
-| Chrome/Edge | 90+ | Full Support |
-| Firefox | 88+ | Full Support |
-| Safari | 14+ | Full Support |
-| Mobile Safari | 14+ | Full Support |
-| Chrome Mobile | 90+ | Full Support |
+### Phase 2: Enhancement (Q1 2026)
+- [ ] Feature expansion
+- [ ] Performance optimization
+- [ ] User feedback integration
+- [ ] Security hardening
+- [ ] Documentation completion
 
-### Progressive Enhancement Strategy
+### Phase 3: Production Readiness (Q2 2026)
+- [ ] Security audit
+- [ ] Load testing
+- [ ] HIPAA compliance certification
+- [ ] Accessibility audit
+- [ ] Code coverage >85%
 
-The platform is designed with progressive enhancement, ensuring core functionality remains accessible on legacy browsers with graceful degradation for advanced features.
-
----
-
-## CORE TECHNOLOGIES
-
-**Next.js**  
-React framework with server-side rendering, static site generation, and edge runtime capabilities.
-
-**Tailwind CSS**  
-Utility-first CSS framework for rapid UI development with consistency enforcement.
-
-**Tailark UI**  
-Healthcare-specific component library with medical UX patterns.
-
-**GSAP**  
-Professional-grade animation library for complex timeline orchestration.
-
-**Vercel**  
-Deployment platform with global edge network and automatic optimization.
+### Phase 4: Deployment (Q3 2026)
+- [ ] Beta testing
+- [ ] Staged rollout
+- [ ] Monitoring setup
+- [ ] Continuous improvement
 
 ---
 
-## ROADMAP AND CONTRIBUTION
+## 📝 TODO: CRITICAL FIXES NEEDED
 
-### Development Phases
+### High Priority
+- [ ] **Complete naming migration** dari "Tailark" ke "Aethersite/Sentra"
+  - Update all package.json names
+  - Update all TypeScript path aliases
+  - Update domain references
+  - Rename asset files
+- [ ] **Remove "cnblocks" legacy code**
+  - Update service worker cache names
+  - Ensure cache version consistency
+- [ ] **Fix dependency issues**
+  - Remove suspicious `fs` package
+  - Fix Google/third-parties link syntax
+  - Standardize Next.js versions
+  - Align React versions
 
-**Phase 1: Foundation (Current)**  
-Prototype development with core functionality and design validation.
+### Medium Priority
+- [ ] Resolve duplicate ESLint configs
+- [ ] Fix workspace configuration duplication
+- [ ] Update README version mismatches
+- [ ] Add missing scripts or remove from docs
+- [ ] Create proper www/README.md
 
-**Phase 2: Enhancement**  
-Feature expansion, performance optimization, and user feedback integration.
+### Low Priority
+- [ ] Add testing infrastructure
+- [ ] Setup CI/CD pipeline
+- [ ] Add Prettier config
+- [ ] Setup Git hooks
+- [ ] Create contributing guidelines
 
-**Phase 3: Production Readiness**  
-Security audit, load testing, and compliance certification.
+---
 
-**Phase 4: Deployment**  
-Staged rollout with monitoring and continuous improvement.
+## 🤝 CONTRIBUTING
 
-### Contributing Guidelines
+**Status:** Contributing guidelines sedang dikembangkan.
 
-Contributions to the codebase must follow:
+Untuk saat ini, kontribusi terbatas pada authorized team members.
+
+Planned requirements:
 - Conventional Commits specification
 - TypeScript strict mode compliance
-- Minimum 80% unit test coverage
-- Documentation for all public APIs
-- Code review by at least 2 maintainers
-
-```
-[PLACEHOLDER: Roadmap Timeline]
-Dimensions: 1800x600px
-Format: Interactive SVG
-Content: Gantt-style timeline displaying development phases with milestones
-```
+- Minimum 80% test coverage
+- Documentation untuk semua public APIs
+- Code review oleh minimal 2 maintainers
 
 ---
 
-## DEDICATION
+## 👥 TEAM
 
-This platform is developed with full commitment to:
+**Maintained By:** Sentra Development Team
+**Original Template By:** Méschac Irung (Tailark UI)
 
-**Healthcare Community**  
-Advancing technology that empowers medical professionals in delivering optimal care.
-
-**Medical AI Innovation**  
-Promoting ethical and human-centered artificial intelligence integration in medical practice.
-
-**Patient-Centric Care**  
-Enabling physicians to focus on the human touch aspect of patient care.
+**Dengan ❤️ dari:**
+- Del
+- Aldebaran
+- Aimee
+- Audrey (AI Entity)
 
 ---
 
-## CONTACT AND SUPPORT
+## 📞 CONTACT
 
-**Technical Documentation:** [Link to detailed docs]  
-**Issue Tracking:** [Link to issue tracker]  
-**Security Reports:** security@sentra.health  
-**General Inquiries:** info@sentra.health
-
----
-
-**Closing Note**
-
-This document represents the technical state of the platform in its development phase. Every architectural decision has undergone evaluation of long-term trade-offs, not merely short-term implementation convenience.
-
-Remember: technology is a tool, not the destination. Every line of code is written with awareness of its impact on end-user experience and overall system sustainability.
+**Technical Issues:** [To be configured]
+**Security Reports:** security@sentra.health *(placeholder)*
+**General Inquiries:** info@sentra.health *(placeholder)*
 
 ---
 
-*Strategic Reflection:*
+## 📄 LICENSE
 
-Good documentation is not just about "what" is built, but "why" certain choices were made and "how" the consequences will play out across time. This README is not merely a technical reference—it is a navigation map for anyone who will maintain and evolve this system in the future.
-Every technology decision made today is inheritance for tomorrow's developers. Choose with wisdom, not hype.# SENTRA AETHERSITE
+Lihat file [LICENSE.md](./LICENCE.md) untuk informasi lisensi.
 
---- With ❤️Del, Aldebaran, Aimee, Audrey---
+---
+
+## 🎯 CLOSING NOTE
+
+> **Aethersite** adalah lebih dari sekadar website - ini adalah rumah digital dari **Sentra Entity**, sebuah visi untuk masa depan healthcare AI yang lebih human-centric.
+
+Platform ini dikembangkan dengan kesadaran penuh bahwa teknologi adalah alat, bukan tujuan akhir. Setiap keputusan arsitektur dibuat dengan mempertimbangkan dampak jangka panjang terhadap pengalaman pengguna dan sustainability sistem.
+
+**Reminder untuk Developers:**
+
+Dokumentasi yang baik bukan hanya tentang "apa" yang dibangun, tapi "mengapa" keputusan tertentu diambil dan "bagaimana" konsekuensinya akan bermain seiring waktu. README ini bukan sekadar referensi teknis - ini adalah peta navigasi untuk siapapun yang akan maintain dan evolve sistem ini di masa depan.
+
+Setiap keputusan teknologi yang dibuat hari ini adalah warisan untuk developers esok hari.
+
+**Choose with wisdom, not hype.**
+
+---
+
+<div align="center">
+
+**🌌 AETHERSITE - Home of Sentra Entity 🌌**
+
+*Building the future of healthcare AI, one line of code at a time.*
+
+**STATUS: PROTOTYPE**
+
+</div>
