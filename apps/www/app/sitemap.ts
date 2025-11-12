@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { blocks, categories } from '@/data/blocks'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://tailark.com' 
+  const baseUrl = 'https://docsynapse.com' 
   
   const routes = [
     {

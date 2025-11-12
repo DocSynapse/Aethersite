@@ -1,0 +1,84 @@
+# → Architecture & Build by DocSynapse
+# Intelligent by Design. Crafted for Humanity.
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output/
+
+# Production build outputs
+build/
+dist/
+.next/
+out/
+.turbo
+
+# Backend specific
+backend/dist/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Misc build artifacts
+*.pem
+*.log
+*.tsbuildinfo
+*.backup
+*.bak
+*~
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Vercel
+.vercel
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Database
+*.sql.backup
+*.db
+*.sqlite
+
+# Docker
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Internal/Development documentation (not for public repo)
+GEMINI.md
+frontend/
+
+# Ignore all app pages except Hero Section
+apps/www/app/(app)/AADI/
+apps/www/app/(app)/docs/
+apps/www/app/(app)/mist/
+apps/www/app/(app)/(categories)/
+apps/www/app/examples/
+apps/www/app/preview/
+apps/www/app/snippets/
+# Keep root page and hero section
+# apps/www/app/(app)/page.tsx (included)
+# apps/www/app/(app)/hero/page.tsx (included)

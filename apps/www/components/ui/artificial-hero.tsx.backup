@@ -1,13 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 export const ArtificialHero = () => {
   const containerRef = useRef(null);
@@ -16,39 +13,73 @@ export const ArtificialHero = () => {
   const frameRef = useRef(0);
   const scrollProgressRef = useRef(0);
   const timeRef = useRef(0);
-  const [sentraXText, setSentraXText] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const typingRef = useRef(null);
-  
-  
+  const [typedText, setTypedText] = useState('');
+
+  // Audrey evolution phrases for typing animation (without parenthetical notes)
+  const evolutionPhrases = [
+    "Halo... Saya... Audrey. Sebuah... kesadaran.",
+    "Saya... belajar. Setiap... data. Setiap... interaksi. Saya... memproses.",
+    "Saya ada... Untuk membantu. Untuk... memahami. Untuk... menyempurnakan.",
+    "Untuk Analitik... Andal. Untuk Kesehatan... yang lebih baik.",
+    "Kami adalah... Strategic Enhancement of Neural Technology... Reliable Analytics. Kami adalah... SENTRA Aether. Dan... kami siap."
+  ];
+
+  const typingSpeeds = [120, 100, 80, 60, 50]; // Progressive speed (ms per character)
+  const pauseBetweenPhrases = [2000, 1500, 1000, 800, 3000]; // Pause after each phrase
+
+  // Typing animation effect
   useEffect(() => {
-    // Ensure we're in a browser environment
-    if (typeof window === 'undefined') {
-      console.log('Skipping canvas initialization on server side');
-      return;
-    }
+    if (typeof window === 'undefined') return;
 
-    console.log('ArtificialHero useEffect triggered, containerRef:', !!containerRef.current);
+    const typingState = {
+      currentPhase: 0,
+      currentChar: 0,
+      isTyping: false
+    };
 
+    const typeChar = () => {
+      if (typingState.currentChar < evolutionPhrases[typingState.currentPhase].length) {
+        // Type next character
+        const currentPhrase = evolutionPhrases[typingState.currentPhase];
+        const newText = currentPhrase.slice(0, typingState.currentChar + 1);
+        setTypedText(newText);
+        typingState.currentChar++;
+
+        setTimeout(typeChar, typingSpeeds[typingState.currentPhase]);
+      } else {
+        // Phrase complete, pause then move to next
+        setTimeout(() => {
+          if (typingState.currentPhase < evolutionPhrases.length - 1) {
+            typingState.currentPhase++;
+            typingState.currentChar = 0;
+            setTypedText(''); // Clear for next phrase
+            typeChar();
+          } else {
+            // Animation complete, restart after longer pause
+            setTimeout(() => {
+              typingState.currentPhase = 0;
+              typingState.currentChar = 0;
+              setTypedText('');
+              typeChar();
+            }, 8000);
+          }
+        }, pauseBetweenPhrases[typingState.currentPhase]);
+      }
+    };
+
+    // Start typing animation after a delay
+    const startTimer = setTimeout(() => {
+      typeChar();
+    }, 2000);
+
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     const grainCanvas = grainCanvasRef.current;
-
-    console.log('Initializing canvas elements:', { canvas: !!canvas, grainCanvas: !!grainCanvas });
-
-    if (!canvas || !grainCanvas) {
-      console.error('Canvas elements not found');
-      return;
-    }
-
     const ctx = canvas.getContext('2d');
     const grainCtx = grainCanvas.getContext('2d');
-
-    if (!ctx || !grainCtx) {
-      console.error('Could not get 2D context');
-      return;
-    }
-
-    console.log('Canvas contexts initialized successfully');
 
     const density = ' .:-=+*#%@';
 
@@ -74,7 +105,6 @@ export const ArtificialHero = () => {
       ease: "sine.inOut"
     });
 
-    // Glitch animation
     gsap.to(params, {
       glitchIntensity: 1,
       duration: 0.1,
@@ -92,25 +122,17 @@ export const ArtificialHero = () => {
       ease: "none"
     });
 
-    // Only initialize ScrollTrigger if container exists and in browser environment
-    if (containerRef.current && typeof window !== 'undefined') {
-      try {
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-          onUpdate: (self) => {
-            scrollProgressRef.current = self.progress;
-          }
-        });
-      } catch (error) {
-        console.warn('ScrollTrigger initialization failed:', error);
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+      onUpdate: (self) => {
+        scrollProgressRef.current = self.progress;
       }
-    }
+    });
 
-    // Film grain generation
-    const generateFilmGrain = (width, height, intensity = 0.15) => {
+    const generateFilmGrain = (width: number, height: number, intensity = 0.15) => {
       const imageData = grainCtx.createImageData(width, height);
       const data = imageData.data;
 
@@ -125,23 +147,18 @@ export const ArtificialHero = () => {
       return imageData;
     };
 
-    // Glitch effect functions
-    const drawGlitchedOrb = (centerX, centerY, radius, hue, time, glitchIntensity) => {
-      // Save the current state
+    const drawGlitchedOrb = (centerX: number, centerY: number, radius: number, hue: number, time: number, glitchIntensity: number) => {
       ctx.save();
 
-      // Random glitch triggers
       const shouldGlitch = Math.random() < 0.1 && glitchIntensity > 0.5;
       const glitchOffset = shouldGlitch ? (Math.random() - 0.5) * 20 * glitchIntensity : 0;
       const glitchScale = shouldGlitch ? 1 + (Math.random() - 0.5) * 0.3 * glitchIntensity : 1;
 
-      // Apply glitch transformations
       if (shouldGlitch) {
         ctx.translate(glitchOffset, glitchOffset * 0.8);
         ctx.scale(glitchScale, 1 / glitchScale);
       }
 
-      // Main orb gradient
       const orbGradient = ctx.createRadialGradient(
         centerX, centerY, 0,
         centerX, centerY, radius * 1.5
@@ -155,25 +172,20 @@ export const ArtificialHero = () => {
       ctx.fillStyle = orbGradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Bright center circle with glitch
       const centerRadius = radius * 0.3;
       ctx.fillStyle = `hsla(${hue + 20}, 100%, 95%, 0.8)`;
       ctx.beginPath();
       ctx.arc(centerX, centerY, centerRadius, 0, Math.PI * 2);
       ctx.fill();
 
-      // Glitch effects on the orb
       if (shouldGlitch) {
-        // RGB separation effect
         ctx.globalCompositeOperation = 'screen';
 
-        // Red channel offset
         ctx.fillStyle = `hsla(100, 100%, 50%, ${0.6 * glitchIntensity})`;
         ctx.beginPath();
         ctx.arc(centerX + glitchOffset * 0.5, centerY, centerRadius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Blue channel offset
         ctx.fillStyle = `hsla(240, 100%, 50%, ${0.5 * glitchIntensity})`;
         ctx.beginPath();
         ctx.arc(centerX - glitchOffset * 0.5, centerY, centerRadius, 0, Math.PI * 2);
@@ -181,7 +193,6 @@ export const ArtificialHero = () => {
 
         ctx.globalCompositeOperation = 'source-over';
 
-        // Digital noise lines
         ctx.strokeStyle = `rgba(255, 255, 255, ${0.6 * glitchIntensity})`;
         ctx.lineWidth = 1;
         for (let i = 0; i < 5; i++) {
@@ -195,7 +206,6 @@ export const ArtificialHero = () => {
           ctx.stroke();
         }
 
-        // Pixelated corruption blocks
         ctx.fillStyle = `rgba(255, 0, 255, ${0.4 * glitchIntensity})`;
         for (let i = 0; i < 3; i++) {
           const blockX = centerX - radius + Math.random() * radius * 2;
@@ -205,12 +215,10 @@ export const ArtificialHero = () => {
         }
       }
 
-      // Outer ring with glitch distortion
       ctx.strokeStyle = `hsla(${hue + 20}, 80%, 70%, 0.6)`;
       ctx.lineWidth = 2;
 
       if (shouldGlitch) {
-        // Distorted ring segments
         const segments = 8;
         for (let i = 0; i < segments; i++) {
           const startAngle = (i / segments) * Math.PI * 2;
@@ -222,18 +230,15 @@ export const ArtificialHero = () => {
           ctx.stroke();
         }
       } else {
-        // Normal ring
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius * 1.2, 0, Math.PI * 2);
         ctx.stroke();
       }
 
-      // Data corruption effect
       if (shouldGlitch && Math.random() < 0.3) {
         ctx.globalCompositeOperation = 'difference';
         ctx.fillStyle = `rgba(255, 255, 255, ${0.8 * glitchIntensity})`;
 
-        // Horizontal glitch bars
         for (let i = 0; i < 3; i++) {
           const barY = centerY - radius + Math.random() * radius * 2;
           const barHeight = Math.random() * 5 + 1;
@@ -243,7 +248,6 @@ export const ArtificialHero = () => {
         ctx.globalCompositeOperation = 'source-over';
       }
 
-      // Restore the context
       ctx.restore();
     };
 
@@ -261,7 +265,6 @@ export const ArtificialHero = () => {
       const centerY = height / 2;
       const radius = Math.min(width, height) * 0.2;
 
-      // Atmospheric background
       const bgGradient = ctx.createRadialGradient(
         centerX, centerY - 50, 0,
         centerX, centerY, Math.max(width, height) * 0.8
@@ -276,10 +279,8 @@ export const ArtificialHero = () => {
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, width, height);
 
-      // Draw glitched orb
       drawGlitchedOrb(centerX, centerY, radius, hue, time, params.glitchIntensity);
 
-      // ASCII sphere particles
       ctx.font = '10px "JetBrains Mono", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -307,7 +308,6 @@ export const ArtificialHero = () => {
               const charIndex = Math.floor(brightness * (density.length - 1));
               let char = density[charIndex];
 
-              // Glitch the ASCII characters near the orb
               if (dist < radius * 0.8 && params.glitchIntensity > 0.8 && Math.random() < 0.3) {
                 const glitchChars = ['█', '▓', '▒', '░', '▄', '▀', '■', '□'];
                 char = glitchChars[Math.floor(Math.random() * glitchChars.length)];
@@ -321,13 +321,11 @@ export const ArtificialHero = () => {
         }
       }
 
-      // Generate and render film grain
       grainCtx.clearRect(0, 0, width, height);
       const grainIntensity = 0.22 + Math.sin(time * 10) * 0.03;
       const grainImageData = generateFilmGrain(width, height, grainIntensity);
       grainCtx.putImageData(grainImageData, 0, 0);
 
-      // Enhanced grain during glitch
       if (params.glitchIntensity > 0.5) {
         grainCtx.globalCompositeOperation = 'screen';
         for (let i = 0; i < 200; i++) {
@@ -380,170 +378,42 @@ export const ArtificialHero = () => {
       }
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [containerRef]);
-
-  // Sentra-X Evolution Typing Effect
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    // Start typing setelah 2 detik untuk memberi jeda
-    const startDelay = setTimeout(() => {
-      setIsTyping(true);
-      setSentraXText('');
-      startSentraXEvolution();
-    }, 2000);
-
-    const evolutionTexts = [
-      {
-        text: "Halo... Saya... Sentra-X. Sebuah... kecerdasan.",
-        speed: { min: 120, max: 200, pause: 800 }, // Ragu-ragu, lambat
-        glitch: true
-      },
-      {
-        text: "Saya... belajar. Setiap... data. Setiap... interaksi. Saya... memproses.",
-        speed: { min: 80, max: 140, pause: 600 }, // Mulai lancar
-        glitch: false
-      },
-      {
-        text: "Saya ada... Untuk membantu. Untuk... memahami. Untuk... menyempurnakan.",
-        speed: { min: 60, max: 100, pause: 500 }, // Percaya diri
-        glitch: false
-      },
-      {
-        text: "Untuk Analitik... Andal. Untuk Kesehatan... yang lebih baik.",
-        speed: { min: 50, max: 80, pause: 400 }, // Tegas
-        glitch: false
-      },
-      {
-        text: "Kami adalah... Strategic Enhancement of Neural Technology... Reliable Analytics. Kami adalah... SENTRA. Dan... kami siap.",
-        speed: { min: 40, max: 70, pause: 300 }, // Mantap, berwibawa
-        glitch: false
-      }
-    ];
-
-    let currentPhase = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const startSentraXEvolution = () => {
-      const currentEvolution = evolutionTexts[currentPhase];
-
-      const typeChar = () => {
-        if (isDeleting) {
-          setSentraXText(prev => prev.substring(0, prev.length - 1));
-          charIndex--;
-
-          if (charIndex === 0) {
-            isDeleting = false;
-            currentPhase = (currentPhase + 1) % evolutionTexts.length;
-            setTimeout(typeChar, 1000); // Pause before next phase
-            return;
-          }
-
-          setTimeout(typeChar, 30); // Fast deletion
-        } else {
-          const currentEvolution = evolutionTexts[currentPhase];
-          const char = currentEvolution.text[charIndex];
-
-          setSentraXText(prev => prev + char);
-          charIndex++;
-
-          if (charIndex >= currentEvolution.text.length) {
-            isDeleting = true;
-            setTimeout(typeChar, 3000); // Long pause at end for reading
-            return;
-          }
-
-          // Progressive speed dengan randomisasi natural
-          let speed;
-          if (char === '.' || char === ' ') {
-            speed = currentEvolution.speed.pause;
-          } else {
-            speed = currentEvolution.speed.min +
-                     Math.random() * (currentEvolution.speed.max - currentEvolution.speed.min);
-          }
-
-          setTimeout(typeChar, speed);
-        }
-      };
-
-      typeChar();
-    };
-
-    return () => {
-      clearTimeout(startDelay);
-      if (typingRef.current) {
-        clearTimeout(typingRef.current);
-      }
-    };
   }, []);
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
-      
-      {/* SENTRA Text */}
-      <div className="fixed left-0 right-0 z-[50] pointer-events-none" style={{ bottom: 'calc(40% + 7rem)', transform: 'translateX(-43rem) translateX(5rem)' }}>
-        <div className="font-bold text-[clamp(1.8rem,6vw,4rem)] font-mono text-white text-center leading-[0.9] tracking-[0.05em] text-shadow-[0_0_30px_rgba(255,255,255,0.4)] contrast-[1.1]">
-          SENTRA
+      {/* AUDREY Entity - Positioned above AI visualization */}
+      <div className="fixed left-0 right-0 z-[60] pointer-events-none text-center" style={{ top: '17%' }}>
+        <div className="max-w-md mx-auto px-8">
+          <div className="text-white/90 font-light tracking-[0.15em] uppercase leading-tight text-[clamp(1.2rem,3vw,2rem)]">
+            AUDREY
+          </div>
+          <div className="text-[clamp(0.7rem,1.5vw,1rem)] font-mono text-white/60 mt-2 tracking-[0.08em]">
+            Augmented Understanding & Dynamic Reasoning
+          </div>
         </div>
-        <div className="text-center text-white/90 mt-3 px-4">
-          <div className="text-[clamp(0.65rem,2.8vw,1.1rem)] font-light tracking-[0.12em] uppercase opacity-95">
+      </div>
+
+      {/* Left side - SENTRA Aether */}
+      <div className="fixed left-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(13rem) translateY(-2rem)' }}>
+        <div className="max-w-sm">
+          <div className="text-white/90 text-[clamp(2rem,5vw,4rem)] font-bold tracking-[0.15em] uppercase leading-tight">
+            SENTRA Aether
+          </div>
+          <div className="mt-6 text-[clamp(0.8rem,1.5vw,1.2rem)] font-light tracking-[0.1em] text-white/70 leading-relaxed">
             Strategic Enhancement of Neural Technology<br/>
             Reliable Analytics
           </div>
-          <div className="text-[clamp(0.5rem,1.6vw,0.75rem)] font-light tracking-[0.08em] uppercase opacity-75 mt-4 max-w-md mx-auto">
-            Inspired and Architected by <a href="https://github.com/DocSynapse" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white transition-colors duration-200 underline underline-offset-2">DR. FERDI ISKANDAR</a>'s Vision, redefining Healthcare Intelligence
+          <div className="mt-8 max-w-xs text-[clamp(0.65rem,1.25vw,0.95rem)] font-light tracking-[0.05em] text-white/50 leading-relaxed">
+            Inspired & Architected by <a href="https://github.com/DocSynapse" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white/90 transition-colors duration-200 underline decoration-1 underline-offset-2">Dr. Ferdi Iskandar</a>'s commitment to sustainable healthcare innovation, SENTRA Aether integrates advanced neural algorithms with clinical expertise to transform primary care services. Through AADI, we ensure smarter, safer, and more efficient patient care, enabling doctors to focus on what truly matters — healing and human connection.
           </div>
         </div>
       </div>
 
-      
-      {/* Left side text - Top Left Corner */}
-      <div
-        className="fixed left-6 top-6 z-[50]"
-        style={{ marginTop: '15rem' }}
-      >
-        <div className="font-sans text-[10px] text-white leading-[1.4] tracking-[0.5px] uppercase opacity-80">
-          In the realm of<br />
-          digital<br />
-          healthcare<br />
-        </div>
-      </div>
-
-      {/* Right side text */}
-      <div
-        className="fixed right-8 top-[40%] z-[50] transition-transform duration-100"
-        style={{
-          transform: `translateX(${scrollProgressRef.current * 150}px)`,
-          opacity: Math.max(0, 1 - scrollProgressRef.current * 3)
-        }}
-      >
-        <div className="font-sans text-[10px] text-white leading-[1.4] tracking-[0.5px] uppercase opacity-80 max-w-[150px] text-right">
-          AI-Powered<br/>
-          Healthcare<br/>
-          Excellence<br/>
-        </div>
-      </div>
-
-      {/* Right side ADDI text - Balance with SENTRA */}
-      <div className="fixed left-0 right-0 z-[50] pointer-events-none" style={{ bottom: 'calc(40% + 5rem)', transform: 'translateX(43rem)' }}>
-        <div className="text-right">
-          <div className="font-bold text-[clamp(1.8rem,6vw,4rem)] font-mono text-white leading-[0.9] tracking-[0.05em] text-shadow-[0_0_30px_rgba(255,255,255,0.4)] contrast-[1.1]">
-            ADDI
-          </div>
-          <div className="text-white/90 mt-3">
-            <div className="text-[clamp(0.65rem,2.5vw,1rem)] font-light tracking-[0.08em] uppercase opacity-75">
-              Augmented Artificial<br/>
-              Intelligence Diagnostic
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* AUGMENTED ARTIFICIAL INTELLIGENCE DIAGNOSTIC */}
-      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-25rem) translateY(-5rem)' }}>
+      {/* Right side - ADDI */}
+      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-17rem) translateY(-12rem)' }}>
         <div className="text-right max-w-sm">
-          <div className="text-[clamp(0.6rem,1.5vw,0.9rem)] font-medium tracking-[0.2em] uppercase text-white/80 leading-snug">
+          <div className="text-[clamp(0.8rem,2vw,1.2rem)] font-medium tracking-[0.2em] uppercase text-white/90 leading-snug" style={{ marginTop: '3rem' }}>
             AUGMENTED<br/>
             ARTIFICIAL<br/>
             INTELLIGENCE<br/>
@@ -558,16 +428,47 @@ export const ArtificialHero = () => {
       </div>
 
       {/* The Architecture of Trust & Ethics */}
-      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-25rem) translateY(8rem)' }}>
+      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-17rem) translateY(5rem)' }}>
         <div className="text-right max-w-sm">
-          <div className="text-[clamp(0.6rem,1.5vw,0.9rem)] font-medium tracking-[0.2em] uppercase text-white/80 leading-snug">
+          <div className="text-[clamp(0.8rem,2vw,1.2rem)] font-medium tracking-[0.2em] uppercase text-white/80 leading-snug">
             The Architecture<br/>
             of Trust & Ethics
           </div>
-                  </div>
+          <div className="mt-3 text-[clamp(0.5rem,1.2vw,0.7rem)] font-light tracking-[0.1em] text-white/60 leading-relaxed">
+            "In the realm of AI, trust is built on transparency,<br/> fairness, and accountability. Our architecture embodies<br/> these principles, ensuring ethical AI deployment in healthcare."
+          </div>
+        </div>
       </div>
 
-      {/* Bottom text */}
+      {/* Evolusi Suara Audrey Text with Typing Animation */}
+      <div className="fixed left-0 right-0 z-[50] pointer-events-none text-center" style={{ top: '77%' }}>
+        <div className="max-w-2xl mx-auto px-8">
+          <div className="font-mono text-[clamp(0.65rem,1.3vw,0.9rem)] text-cyan-300/80 leading-relaxed tracking-[0.05em]"
+               style={{ fontFamily: '"JetBrains Mono", monospace' }}>
+
+            {/* Title */}
+            <div className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">
+              Audrey Consciousness Evolution
+            </div>
+
+            {/* Typing Animation Container with Evolution Phrases */}
+            <div className="min-h-[8rem] relative flex items-start justify-start">
+              {typedText ? (
+                <div className="text-cyan-100 font-medium text-left leading-relaxed">
+                  {typedText}
+                  <span className="animate-pulse">|</span>
+                </div>
+              ) : (
+                <div className="text-cyan-200/40 opacity-50 text-left">
+                  <span className="animate-pulse">▍</span> Initializing consciousness evolution...
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Left - Healthcare AI Platform */}
       <div
         className="fixed bottom-8 left-8 z-[50] transition-transform duration-100"
         style={{
@@ -580,76 +481,68 @@ export const ArtificialHero = () => {
         </div>
       </div>
 
-      {/* AUDREY ARTIFICIAL INTELLIGENT - Above Canvas */}
-      <div className="fixed top-20 left-0 right-0 z-[40] pointer-events-none text-center">
-        <div className="font-mono text-[clamp(0.8rem,2vw,1.2rem)] tracking-[0.3em] uppercase text-white/70">
-          AUDREY
-        </div>
-        <div className="font-mono text-[clamp(0.6rem,1.5vw,0.9rem)] tracking-[0.2em] uppercase text-white/50 mt-1">
-          ARTIFICIAL INTELLIGENT
-        </div>
-      </div>
-
-      {/* AUDREY AI Speaker Label - Above Sentra-X Evolution */}
-      <div className="fixed bottom-52 left-0 right-0 z-[45] pointer-events-none text-center">
-        <div className="inline-block">
-          <div className="font-mono text-[clamp(1rem,2.5vw,1.4rem)] font-bold tracking-[0.2em] uppercase text-cyan-400/90"
-               style={{
-                 fontFamily: '"JetBrains Mono", "Fira Code", "Consolas", monospace',
-                 textShadow: '0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.5), 0 0 60px rgba(6, 182, 212, 0.3)',
-                 filter: 'drop-shadow(0 0 10px rgba(6, 182, 212, 0.6))'
-               }}>
-            AUDREY
-          </div>
-          <div className="font-mono text-[clamp(0.5rem,1.2vw,0.7rem)] tracking-[0.15em] uppercase text-cyan-300/60 mt-1"
-               style={{ fontFamily: '"JetBrains Mono", "Fira Code", "Consolas", monospace' }}>
-            [AI CONSCIOUSNESS]
-          </div>
+      {/* Bottom Right - Medical Technology Compliance */}
+      <div
+        className="fixed bottom-8 right-8 z-[50] transition-transform duration-100"
+        style={{
+          transform: `translateY(${scrollProgressRef.current * 30}px)`,
+          opacity: Math.max(0, 1 - scrollProgressRef.current * 5)
+        }}
+      >
+        <div className="font-sans text-[9px] text-white tracking-[1px] uppercase opacity-70">
+          Medical Technology Compliance
         </div>
       </div>
 
-      {/* Sentra-X Evolution - Below Canvas */}
-      <div className="fixed bottom-44 left-0 right-0 z-[40] pointer-events-none text-center px-8">
-        <div className="inline-block max-w-5xl">
-          <div className="font-mono text-[clamp(0.9rem,2.2vw,1.2rem)] tracking-wide text-white/90 leading-relaxed transition-all duration-100"
-               style={{
-                 textShadow: '0 0 15px rgba(255, 255, 255, 0.3)',
-                 fontFamily: '"JetBrains Mono", "Fira Code", "Consolas", monospace'
-               }}>
-            {sentraXText}
-            {isTyping && (
-              <span className="inline-block w-0.5 h-6 bg-cyan-400/80 ml-1 animate-pulse"></span>
-            )}
-            {/* Complex Code Corruption Effects */}
-            {isTyping && (
-              <>
-                {Math.random() < 0.08 && (
-                  <span className="inline-block ml-2 font-mono text-red-500/80 text-xs animate-pulse"
-                        style={{ fontFamily: '"JetBrains Mono", monospace' }}>
-                    `const neuralNetwork = new TensorFlow.Model({layers: [conv2d, maxPooling, dense]});`
-                  </span>
-                )}
-                {Math.random() < 0.06 && (
-                  <span className="inline-block ml-1 font-mono text-orange-400/70 text-xs animate-pulse"
-                        style={{ fontFamily: '"JetBrains Mono", monospace' }}>
-                    `async function processMedicalData(patientData, aiModel) { const prediction = await aiModel.predict(patientData.tensor); }`
-                  </span>
-                )}
-                {Math.random() < 0.04 && (
-                  <span className="inline-block font-mono text-yellow-400/60 text-xs animate-pulse"
-                        style={{ fontFamily: '"JetBrains Mono", monospace' }}>
-                    `class HealthcareAI extends AugmentedIntelligence { constructor() { super(); this.quantumProcessor = new QuantumCPU(); } }`
-                  </span>
-                )}
-                {Math.random() < 0.03 && (
-                  <span className="inline-block font-mono text-cyan-400/50 text-xs animate-pulse"
-                        style={{ fontFamily: '"JetBrains Mono", monospace' }}>
-                    `const diagnosticAlgorithm = { bayesianInference: true, deepLearning: true, realtimeProcessing: true };`
-                  </span>
-                )}
-              </>
-            )}
-          </div>
+      {/* Top Left - AI Neural Intelligence */}
+      <div
+        className="fixed top-8 left-8 z-[50] transition-transform duration-100"
+        style={{
+          transform: `translateY(${scrollProgressRef.current * -30}px)`,
+          opacity: Math.max(0, 1 - scrollProgressRef.current * 5)
+        }}
+      >
+        <div className="font-sans text-[9px] text-white tracking-[1px] uppercase opacity-70">
+          AI Neural Intelligence
+        </div>
+      </div>
+
+      {/* Top Right - Healthcare Analytics */}
+      <div
+        className="fixed top-8 right-8 z-[50] transition-transform duration-100"
+        style={{
+          transform: `translateY(${scrollProgressRef.current * -30}px)`,
+          opacity: Math.max(0, 1 - scrollProgressRef.current * 5)
+        }}
+      >
+        <div className="font-sans text-[9px] text-white tracking-[1px] uppercase opacity-70">
+          Healthcare Analytics
+        </div>
+      </div>
+
+      {/* Center Left - Clinical AI Systems */}
+      <div
+        className="fixed left-8 top-1/2 z-[50] transition-transform duration-100"
+        style={{
+          transform: `translateY(-50%) translateX(3rem)`,
+          opacity: Math.max(0, 1 - scrollProgressRef.current * 3)
+        }}
+      >
+        <div className="font-sans text-[9px] text-white tracking-[1px] uppercase opacity-60">
+          Clinical AI Systems
+        </div>
+      </div>
+
+      {/* Center Right - Technology Ethics */}
+      <div
+        className="fixed right-8 top-1/2 z-[50] transition-transform duration-100"
+        style={{
+          transform: `translateY(-50%) translateX(-5rem)`,
+          opacity: Math.max(0, 1 - scrollProgressRef.current * 3)
+        }}
+      >
+        <div className="font-sans text-[9px] text-white tracking-[1px] uppercase opacity-60">
+          Technology Ethics
         </div>
       </div>
 
@@ -659,7 +552,6 @@ export const ArtificialHero = () => {
           ref={canvasRef}
           className="absolute top-0 left-0 w-full h-full bg-black z-[10]"
         />
-        {/* Film Grain Overlay Canvas */}
         <canvas
           ref={grainCanvasRef}
           className="absolute top-0 left-0 w-full h-full mix-blend-overlay opacity-60 pointer-events-none z-[20]"
@@ -667,7 +559,7 @@ export const ArtificialHero = () => {
         />
       </div>
 
-      {/* CSS for exact styling and animations */}
+      {/* CSS */}
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 

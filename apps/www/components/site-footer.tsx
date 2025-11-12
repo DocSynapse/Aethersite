@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { LogoIcon } from '@tailark/core/components/logo'
-import { Button } from '@tailark/core/ui/button'
+import { LogoIcon } from './logo'
+import { Button } from '@docsynapse/core/ui/button'
 import { ArrowUpRight } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'
 
@@ -20,7 +20,7 @@ export const SiteFooter = () => (
                     variant="link"
                     className="text-foreground decoration-primary -ml-4 gap-1">
                     <Link
-                        href="https://github.com/tailark/blocks"
+                        href="https://github.com/DocSynapse/blocks"
                         target="_blank"
                         className="text-sm">
                         GitHub

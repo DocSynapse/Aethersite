@@ -13,11 +13,19 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "registry:build": "shadcn build"
+    "dev": "turbo run dev",
+    "dev:backend": "pnpm --filter @docsynapse/backend dev",
+    "build": "turbo run build",
+    "build:backend": "pnpm --filter @docsynapse/backend build",
+    "start": "turbo run start",
+    "start:backend": "pnpm --filter @docsynapse/backend start",
+    "lint": "turbo run lint",
+    "test": "pnpm --filter @docsynapse/backend test",
+    "test:coverage": "pnpm --filter @docsynapse/backend test:coverage",
+    "registry:build": "turbo run registry:build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
   },
   "devDependencies": {
     "prettier": "3.5.1",

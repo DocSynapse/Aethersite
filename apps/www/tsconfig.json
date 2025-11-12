@@ -1,13 +1,13 @@
 {
-  "extends": "@tailark/ts-config/base.json",
+  "extends": "@docsynapse/ts-config/base.json",
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
       "@/*": ["./*"],
-      "@tailark/core/*" : ["../../packages/core/src/*"],
-      "@tailark/mist/*" : ["../../packages/mist-kit/*"],
-      "@tailark/dusk/*" : ["../../packages/dusk-kit/*"],
-      "@mist/*" : ["../../packages/mist-kit/*"]
+      "@docsynapse/core/*" : ["../../packages/core/src/"],
+      "@docsynapse/mist/*" : ["../../packages/mist-kit/"],
+      "@docsynapse/dusk/*" : ["../../packages/dusk-kit/"],
+      "@mist/*" : ["../../packages/mist-kit/"]
     }
   },
   "include": [

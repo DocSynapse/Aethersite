@@ -68,12 +68,23 @@ Through Aethersite, **AUDREY** becomes a responsive and adaptive companion for h
 
 </div>
 
-**Framework:** Next.js 15+ (App Router, RSC, Suspense, Streaming)  
-**Language:** TypeScript 5+  
-**Styling:** Tailwind CSS 4 (JIT, scalable theme system)  
-**Animation:** GSAP 3.13+ (scroll-based timelines, GPU optimized)  
-**Package Manager:** pnpm 9.10 (monorepo support, workspace linking)  
-**Deployment:** Vercel (edge-ready, zero-config CI/CD)
+**Frontend:**
+- **Framework:** Next.js 15+ (App Router, RSC, Suspense, Streaming)  
+- **Language:** TypeScript 5+  
+- **Styling:** Tailwind CSS 4 (JIT, scalable theme system)  
+- **Animation:** GSAP 3.13+ (scroll-based timelines, GPU optimized)  
+
+**Backend:**
+- **Framework:** Express.js 4+
+- **Language:** TypeScript 5+
+- **Database:** PostgreSQL 16
+- **Authentication:** JWT (jsonwebtoken)
+- **API Documentation:** Swagger/OpenAPI
+
+**Infrastructure:**
+- **Package Manager:** pnpm 9.10 (monorepo support, workspace linking)  
+- **Deployment:** Vercel (frontend) + Docker Compose (backend)
+- **CI/CD:** GitHub Actions
 
 ---
 
@@ -111,29 +122,91 @@ pnpm install
 
 ### Commands
 ```bash
-pnpm dev       # Start local dev server (localhost:3000)
-pnpm build     # Build production bundle
-pnpm start     # Run production server
-pnpm lint      # Run ESLint checks
-pnpm registry:build
+pnpm dev              # Start frontend dev server (localhost:3000)
+pnpm dev:backend      # Start backend API server (localhost:3001)
+pnpm build            # Build frontend production bundle
+pnpm build:backend    # Build backend production bundle
+pnpm start            # Run frontend production server
+pnpm start:backend    # Run backend production server
+pnpm lint             # Run ESLint checks (frontend + backend)
+pnpm test             # Run backend tests
+pnpm test:coverage     # Run backend tests with coverage
+pnpm docker:up        # Start Docker services (database + backend)
+pnpm docker:down      # Stop Docker services
+pnpm registry:build   # Build component registry
 ```
 
 ### Project Structure
 ```
-Aethersite/
+aether/
 ├── apps/
-│   └── www/               # Web application
-│       ├── app/           # Next.js app directory
-│       ├── components/    # React components
-│       ├── lib/           # Utility functions
-│       └── public/        # Static assets
-├── packages/
-│   ├── core/              # Core logic
-│   ├── dusk-kit/          # Dark theme kit
-│   ├── mist-kit/          # Light theme kit
-│   └── ts-config/         # Shared TypeScript config
-└── package.json
+│   └── www/                    # Frontend (Next.js)
+│       ├── app/                # Next.js App Router pages
+│       ├── components/         # React components
+│       ├── lib/                # Utility functions
+│       └── public/             # Static assets
+├── backend/                    # Backend API (Express.js)
+│   ├── src/
+│   │   ├── config/            # Database & Swagger config
+│   │   ├── middleware/        # Auth, error handling
+│   │   ├── models/            # Database models (User, Item)
+│   │   ├── routes/            # API routes (auth, items)
+│   │   ├── tests/             # Unit & integration tests
+│   │   └── server.ts          # Express server entry point
+│   ├── migrations/            # Database migrations (SQL)
+│   ├── Dockerfile             # Container configuration
+│   └── package.json           # Backend dependencies
+├── packages/                   # Shared packages
+│   ├── core/                  # Core logic
+│   ├── dusk/                  # Dark theme kit
+│   ├── mist/                  # Light theme kit
+│   └── ts-config/             # Shared TypeScript config
+├── doc/                        # Documentation
+│   ├── architecture.md        # System architecture
+│   ├── api.md                 # API documentation
+│   ├── setup.md               # Setup guide
+│   └── runbook.md             # Operations guide
+├── .github/workflows/         # CI/CD
+│   └── ci.yml                 # GitHub Actions workflow
+├── docker-compose.yml         # Docker orchestration
+└── package.json               # Root package.json
 ```
+
+### File Descriptions
+
+#### Backend Files
+- `backend/src/server.ts` - Express server entry point, routes setup
+- `backend/src/config/database.ts` - PostgreSQL connection pool configuration
+- `backend/src/config/swagger.ts` - OpenAPI/Swagger documentation setup
+- `backend/src/middleware/auth.middleware.ts` - JWT authentication middleware
+- `backend/src/middleware/errorHandler.ts` - Global error handling middleware
+- `backend/src/models/user.model.ts` - User database model and queries
+- `backend/src/models/item.model.ts` - Item database model and CRUD operations
+- `backend/src/routes/auth.routes.ts` - Authentication routes (signup, login, me)
+- `backend/src/routes/items.routes.ts` - Items CRUD routes (protected)
+- `backend/migrations/001_create_tables.sql` - Database schema migration
+- `backend/src/tests/*.test.ts` - Unit tests for modules
+- `backend/src/tests/integration/*.test.ts` - Integration tests for API endpoints
+- `backend/Dockerfile` - Multi-stage Docker build configuration
+- `backend/.env.example` - Environment variables template (TODO: copy to .env)
+
+#### Frontend Files
+- `apps/www/app/` - Next.js App Router pages and layouts
+- `apps/www/components/` - React components including ArtificialHero
+- `apps/www/lib/` - Utility functions and helpers
+- `apps/www/vercel.json` - Vercel deployment configuration
+
+#### Documentation Files
+- `doc/architecture.md` - System architecture, tech stack, database schema
+- `doc/api.md` - Complete API reference with endpoints and examples
+- `doc/setup.md` - Setup instructions, troubleshooting, deployment guide
+- `doc/runbook.md` - Operations guide, monitoring, troubleshooting procedures
+
+#### Configuration Files
+- `package.json` - Root package.json with workspace scripts
+- `docker-compose.yml` - Docker Compose configuration for PostgreSQL + Backend
+- `.github/workflows/ci.yml` - GitHub Actions CI/CD pipeline
+- `.gitignore` - Git ignore patterns for dependencies, build outputs, env files
 
 ---
 

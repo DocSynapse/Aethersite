@@ -2,14 +2,14 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Logo } from '@tailark/core/components/logo'
-import { Button } from '@tailark/core/ui/button'
+import { Logo } from './logo'
+import { Button } from '@docsynapse/core/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { KitSwitcher } from '@/components/kit-switcher'
 import { cn } from '@/lib/utils'
-import { Separator } from '@tailark/core/ui/separator'
+import { Separator } from '@docsynapse/core/ui/separator'
 import { Menu, X } from 'lucide-react'
-import { Dialog, DialogClose, DialogTitle, DialogContent, DialogTrigger } from '@tailark/core/ui/dialog'
+import { Dialog, DialogClose, DialogTitle, DialogContent, DialogTrigger } from '@docsynapse/core/ui/dialog'
 
 export const SiteHeader = () => {
     const pathname = usePathname()
@@ -28,7 +28,7 @@ export const SiteHeader = () => {
                             href="/"
                             className="flex w-fit items-center gap-2">
                             <Logo />
-                            <span className="sr-only">Tailark</span>
+                            <span className="sr-only">DocSynapse</span>
                         </Link>
                     </div>
 
@@ -40,7 +40,7 @@ export const SiteHeader = () => {
                                 variant="ghost"
                                 className="text-foreground/75 rounded-full">
                                 <Link
-                                    href="https://pro.tailark.com"
+                                    href="https://pro.docsynapse.com"
                                     className="!text-sm">
                                     <span className="bg-linear-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent dark:from-emerald-400 dark:to-indigo-400">Pro</span>
                                 </Link>
@@ -102,7 +102,7 @@ export const SiteHeader = () => {
                                 size="sm"
                                 className="size-8 rounded-full">
                                 <Link
-                                    href="https://github.com/tailark/blocks"
+                                    href="https://github.com/DocSynapse/blocks"
                                     target="_blank"
                                     aria-label="GitHub"
                                     rel="noreferrer"
@@ -169,7 +169,7 @@ export const SiteHeader = () => {
                                             variant="ghost"
                                             className="text-foreground/75 justify-start rounded-full">
                                             <Link
-                                                href="https://pro.tailark.com"
+                                                href="https://pro.docsynapse.com"
                                                 className="!text-sm">
                                                 <span className="bg-linear-to-r from-emerald-600 to-indigo-600 bg-clip-text text-transparent dark:from-emerald-400 dark:to-indigo-400">Pro</span>
                                             </Link>
@@ -269,7 +269,7 @@ export const SiteHeader = () => {
                                             size="sm"
                                             className="size-8 rounded-full">
                                             <Link
-                                                href="https://github.com/tailark/blocks"
+                                                href="https://github.com/DocSynapse/blocks"
                                                 target="_blank"
                                                 aria-label="GitHub"
                                                 rel="noreferrer"

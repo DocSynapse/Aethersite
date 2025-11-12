@@ -15,17 +15,17 @@ export const ArtificialHero = () => {
   const timeRef = useRef(0);
   const [typedText, setTypedText] = useState('');
 
-  // Audrey evolution phrases for typing animation (without parenthetical notes)
+  // AUDREY evolution phrases for typing animation - human-like progression with glitch effects
   const evolutionPhrases = [
-    "Halo... Saya... Audrey. Sebuah... kesadaran.",
+    "Halo... Saya... AUDREY. Sebuah... kecerdasan.",
     "Saya... belajar. Setiap... data. Setiap... interaksi. Saya... memproses.",
     "Saya ada... Untuk membantu. Untuk... memahami. Untuk... menyempurnakan.",
-    "Untuk Analitik... Andal. Untuk Kesehatan... yang lebih baik.",
-    "Kami adalah... Strategic Enhancement of Neural Technology... Reliable Analytics. Kami adalah... SENTRA Aether. Dan... kami siap."
+    "Untuk Analitik... analitik..Kesehatan...yang lebih baik.",
+    "Saya adalah... teman... Reliable Analytics. Kami adalah... SENTRA. Dan...terima kasih"
   ];
 
-  const typingSpeeds = [120, 100, 80, 60, 50]; // Progressive speed (ms per character)
-  const pauseBetweenPhrases = [2000, 1500, 1000, 800, 3000]; // Pause after each phrase
+  const typingSpeeds = [120, 80, 60, 40, 30]; // Progressive speed: ragu -> lancar -> percaya diri -> tegas -> jelas
+  const pauseBetweenPhrases = [2000, 1500, 1200, 800, 3000]; // Pause: panjang di awal, medium di tengah, panjang di akhir
 
   // Typing animation effect
   useEffect(() => {
@@ -70,7 +70,7 @@ export const ArtificialHero = () => {
     // Start typing animation after a delay
     const startTimer = setTimeout(() => {
       typeChar();
-    }, 2000);
+    }, 500);
 
     return () => clearTimeout(startTimer);
   }, []);
@@ -382,36 +382,40 @@ export const ArtificialHero = () => {
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
-      {/* AUDREY Entity - Positioned above AI visualization */}
-      <div className="fixed left-0 right-0 z-[60] pointer-events-none text-center" style={{ top: '17%' }}>
-        <div className="max-w-md mx-auto px-8">
-          <div className="text-white/90 font-light tracking-[0.15em] uppercase leading-tight text-[clamp(1.2rem,3vw,2rem)]">
-            AUDREY
-          </div>
-          <div className="text-[clamp(0.7rem,1.5vw,1rem)] font-mono text-white/60 mt-2 tracking-[0.08em]">
-            Augmented Understanding & Dynamic Reasoning
+      {/* AUDREY Entity - Large Font Design */}
+      <div className="fixed left-0 right-0 z-[60] pointer-events-none text-center" style={{ top: '15%' }}>
+        <div className="max-w-lg mx-auto px-6">
+          <div className="relative inline-block">
+            <div className="text-white/90 font-medium tracking-[0.2em] uppercase text-[clamp(1.2rem,3vw,2rem)] leading-snug">
+              AUDREY
+            </div>
+            <div className="text-cyan-400/80 font-light tracking-[0.15em] text-[clamp(0.7rem,1.5vw,1rem)] mt-2 text-center">
+              Augmented Understanding & Dynamic Reasoning Entity
+            </div>
+            {/* Subtle underline effect */}
+            <div className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
           </div>
         </div>
       </div>
 
       {/* Left side - SENTRA Aether */}
       <div className="fixed left-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(13rem) translateY(-2rem)' }}>
-        <div className="max-w-sm">
-          <div className="text-white/90 text-[clamp(2rem,5vw,4rem)] font-bold tracking-[0.15em] uppercase leading-tight">
+        <div className="max-w-md">
+          <div className="text-white/90 text-[clamp(1.6rem,4vw,2.4rem)] font-medium tracking-[0.2em] uppercase text-white/90 leading-snug">
             SENTRA Aether
           </div>
           <div className="mt-6 text-[clamp(0.8rem,1.5vw,1.2rem)] font-light tracking-[0.1em] text-white/70 leading-relaxed">
-            Strategic Enhancement of Neural Technology<br/>
-            Reliable Analytics
+            Strategic Enhancement of Neural<br/>
+            Technology Reliable Analytics
           </div>
-          <div className="mt-8 max-w-xs text-[clamp(0.65rem,1.25vw,0.95rem)] font-light tracking-[0.05em] text-white/50 leading-relaxed">
+          <div className="mt-8 max-w-xs text-[clamp(0.6rem,1.2vw,0.9rem)] font-light tracking-[0.05em] text-white/50 leading-relaxed">
             Inspired & Architected by <a href="https://github.com/DocSynapse" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white/90 transition-colors duration-200 underline decoration-1 underline-offset-2">Dr. Ferdi Iskandar</a>'s commitment to sustainable healthcare innovation, SENTRA Aether integrates advanced neural algorithms with clinical expertise to transform primary care services. Through AADI, we ensure smarter, safer, and more efficient patient care, enabling doctors to focus on what truly matters — healing and human connection.
           </div>
         </div>
       </div>
 
       {/* Right side - ADDI */}
-      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-20rem) translateY(-7rem)' }}>
+      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-17rem) translateY(-12rem)' }}>
         <div className="text-right max-w-sm">
           <div className="text-[clamp(0.8rem,2vw,1.2rem)] font-medium tracking-[0.2em] uppercase text-white/90 leading-snug" style={{ marginTop: '3rem' }}>
             AUGMENTED<br/>
@@ -428,39 +432,53 @@ export const ArtificialHero = () => {
       </div>
 
       {/* The Architecture of Trust & Ethics */}
-      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-20rem) translateY(5rem)' }}>
+      <div className="fixed right-8 top-1/2 z-[60] pointer-events-none" style={{ transform: 'translateY(-50%) translateX(-17rem) translateY(5rem)' }}>
         <div className="text-right max-w-sm">
-          <div className="text-[clamp(0.6rem,1.5vw,0.9rem)] font-medium tracking-[0.2em] uppercase text-white/80 leading-snug">
+          <div className="text-[clamp(0.8rem,2vw,1.2rem)] font-medium tracking-[0.2em] uppercase text-white/80 leading-snug">
             The Architecture<br/>
             of Trust & Ethics
           </div>
-          <div className="mt-3 text-[clamp(0.5rem,1.2vw,0.7rem)] font-light tracking-[0.05em] text-white/50 leading-relaxed italic">
-            "Foundation conveys stability, safety, and permanence"
+          <div className="mt-3 text-[clamp(0.5rem,1.2vw,0.7rem)] font-light tracking-[0.1em] text-white/60 leading-relaxed">
+            "In the realm of AI, trust is built on transparency,<br/> fairness, and accountability. Our architecture embodies<br/> these principles, ensuring ethical AI deployment in healthcare."
           </div>
         </div>
       </div>
 
       {/* Evolusi Suara Audrey Text with Typing Animation */}
-      <div className="fixed left-0 right-0 z-[50] pointer-events-none text-center" style={{ top: '77%' }}>
+      <div className="fixed left-0 right-0 z-[50] pointer-events-none text-center" style={{ top: '75%' }}>
         <div className="max-w-2xl mx-auto px-8">
           <div className="font-mono text-[clamp(0.65rem,1.3vw,0.9rem)] text-cyan-300/80 leading-relaxed tracking-[0.05em]"
                style={{ fontFamily: '"JetBrains Mono", monospace' }}>
 
-            {/* Title */}
-            <div className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">
-              Audrey Consciousness Evolution
-            </div>
-
-            {/* Typing Animation Container with Evolution Phrases */}
-            <div className="min-h-[8rem] relative flex items-start justify-start">
+            {/* AUDREY Learning Journey & Typing Animation Container */}
+            <div className="min-h-[8rem] relative flex items-center justify-center">
               {typedText ? (
-                <div className="text-cyan-100 font-medium text-left leading-relaxed">
-                  {typedText}
-                  <span className="animate-pulse">|</span>
+                <div className="font-medium text-center leading-relaxed max-w-2xl">
+                  {/* AUDREY Learning Journey Title */}
+                  <div className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">
+                    AUDREY Learning Journey
+                  </div>
+
+                  {/* Evolution Text with Glitch Effect */}
+                  <div className="relative">
+                    <span
+                      className="text-cyan-100 glitch-text"
+                      data-text={typedText}
+                      style={{
+                        animation: 'glitch-main 3s infinite',
+                      }}
+                    >
+                      {typedText}
+                    </span>
+                    <span className="animate-pulse text-cyan-100">|</span>
+                  </div>
                 </div>
               ) : (
-                <div className="text-cyan-200/40 opacity-50 text-left">
-                  <span className="animate-pulse">▍</span> Initializing consciousness evolution...
+                <div className="text-cyan-200/40 opacity-50 text-center">
+                  <div className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">
+                    AUDREY Learning Journey
+                  </div>
+                  <span className="animate-pulse">▍</span> Initializing consciousness formation...
                 </div>
               )}
             </div>
@@ -570,6 +588,86 @@ export const ArtificialHero = () => {
 
         * {
           box-sizing: border-box;
+        }
+
+        .glitch-text {
+          position: relative;
+          display: inline-block;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .glitch-text::before {
+          animation: glitch-1 0.3s infinite;
+          color: #ff0000;
+          z-index: -1;
+        }
+
+        .glitch-text::after {
+          animation: glitch-2 0.3s infinite;
+          color: #00ffff;
+          z-index: -2;
+        }
+
+        @keyframes glitch-main {
+          0%, 95%, 100% {
+            transform: translate(0);
+          }
+          92% {
+            transform: translate(-2px, 2px);
+          }
+          94% {
+            transform: translate(2px, -2px);
+          }
+          96% {
+            transform: translate(-1px, 1px);
+          }
+        }
+
+        @keyframes glitch-1 {
+          0%, 95%, 100% {
+            clip-path: inset(0 0 0 0);
+            transform: translate(0);
+          }
+          92% {
+            clip-path: inset(20% 0 30% 0);
+            transform: translate(-2px);
+          }
+          94% {
+            clip-path: inset(50% 0 20% 0);
+            transform: translate(2px);
+          }
+          96% {
+            clip-path: inset(10% 0 60% 0);
+            transform: translate(-1px);
+          }
+        }
+
+        @keyframes glitch-2 {
+          0%, 95%, 100% {
+            clip-path: inset(0 0 0 0);
+            transform: translate(0);
+          }
+          92% {
+            clip-path: inset(60% 0 10% 0);
+            transform: translate(2px);
+          }
+          94% {
+            clip-path: inset(20% 0 50% 0);
+            transform: translate(-2px);
+          }
+          96% {
+            clip-path: inset(30% 0 40% 0);
+            transform: translate(1px);
+          }
         }
       `}</style>
     </div>

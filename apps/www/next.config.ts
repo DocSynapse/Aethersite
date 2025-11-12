@@ -14,7 +14,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'pro.tailark.com',
+                hostname: 'pro.docsynapse.com',
             },
         ],
     },
