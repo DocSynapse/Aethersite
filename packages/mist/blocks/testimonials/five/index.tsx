@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
 import { Quote } from 'lucide-react'
 
 export default function TestimonialSection() {

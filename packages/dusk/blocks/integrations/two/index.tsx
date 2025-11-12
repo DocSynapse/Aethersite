@@ -1,7 +1,7 @@
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@tailark/core/components/logos'
-import { LogoIcon } from '@tailark/core/components/logo'
-import { cn } from '@tailark/core/lib/utils'
-import { Button } from '@tailark/core/ui/button'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core/components/logos'
+import { LogoIcon } from '@docsynapse/core/components/logo'
+import { cn } from '@docsynapse/core/lib/utils'
+import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
 
 export default function IntegrationsSection() {

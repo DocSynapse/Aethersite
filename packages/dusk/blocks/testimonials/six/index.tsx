@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
-import { Card, CardContent } from '@tailark/core/ui/card'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
+import { Card, CardContent } from '@docsynapse/core/ui/card'
 
 type Testimonial = {
     name: string

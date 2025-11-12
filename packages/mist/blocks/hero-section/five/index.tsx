@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Button } from '@mist/components/ui/button'
 import Image from 'next/image'
 import { BookOpen } from 'lucide-react'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 
 export default function HeroSection() {
     return (

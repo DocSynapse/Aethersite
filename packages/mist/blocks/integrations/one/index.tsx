@@ -1,4 +1,4 @@
-import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@tailark/core/components/logos'
+import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@docsynapse/core/components/logos'
 
 export default function Integrations() {
     return (

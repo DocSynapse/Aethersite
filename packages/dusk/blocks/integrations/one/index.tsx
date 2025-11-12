@@ -1,9 +1,9 @@
-import { Button } from '@tailark/core/ui/button'
-import { Card } from '@tailark/core/ui/card'
+import { Button } from '@docsynapse/core/ui/button'
+import { Card } from '@docsynapse/core/ui/card'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import * as React from 'react'
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@tailark/core/components/logos'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core/components/logos'
 
 export default function IntegrationsSection() {
     return (

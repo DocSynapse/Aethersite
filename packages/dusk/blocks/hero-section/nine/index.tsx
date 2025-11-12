@@ -1,8 +1,8 @@
 'use client'
-import { Logo } from '@tailark/core/components/logo'
+import { Logo } from '@docsynapse/core/components/logo'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 

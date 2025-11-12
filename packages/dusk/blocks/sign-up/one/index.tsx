@@ -1,7 +1,7 @@
-import { LogoIcon } from '@tailark/core/components/logo'
-import { Button } from '@tailark/core/ui/button'
-import { Input } from '@tailark/core/ui/input'
-import { Label } from '@tailark/core/ui/label'
+import { LogoIcon } from '@docsynapse/core/components/logo'
+import { Button } from '@docsynapse/core/ui/button'
+import { Input } from '@docsynapse/core/ui/input'
+import { Label } from '@docsynapse/core/ui/label'
 import Link from 'next/link'
 
 export default function LoginPage() {

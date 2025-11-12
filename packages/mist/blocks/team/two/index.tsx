@@ -1,5 +1,5 @@
 import { Button } from '@mist/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
 import { ChevronRight, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@mist/components/ui/hover-card'

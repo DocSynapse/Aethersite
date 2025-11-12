@@ -1,6 +1,6 @@
 import { Card } from '@mist/components/ui/card'
 import * as React from 'react'
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@tailark/core/components/logos'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core/components/logos'
 
 export default function Integrations() {
     return (

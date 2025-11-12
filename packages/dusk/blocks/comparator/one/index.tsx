@@ -1,4 +1,4 @@
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import { Cpu, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 

@@ -8,9 +8,9 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
 import Link from 'next/link'
-import { Logo } from '@tailark/core/components/logo'
+import { Logo } from '@docsynapse/core/components/logo'
 import { ArrowRight, Menu, Rocket, X } from 'lucide-react'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 
 const menuItems = [
     { name: 'Features', href: '#' },

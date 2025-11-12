@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader } from '@tailark/core/ui/card'
-import { cn } from '@tailark/core/lib/utils'
+import { Card, CardContent, CardHeader } from '@docsynapse/core/ui/card'
+import { cn } from '@docsynapse/core/lib/utils'
 import { Calendar, LucideIcon, MapIcon } from 'lucide-react'
 import Image from 'next/image'
 import { ReactNode } from 'react'

@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader } from '@tailark/core/ui/card'
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
+import { Card, CardContent, CardHeader } from '@docsynapse/core/ui/card'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
 
 export default function Testimonials() {
     return (

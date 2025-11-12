@@ -1,5 +1,5 @@
-import { cn } from '@tailark/core/lib/utils'
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
+import { cn } from '@docsynapse/core/lib/utils'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
 import { Star } from 'lucide-react'
 
 export default function TestimonialSection() {

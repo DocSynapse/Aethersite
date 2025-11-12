@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@tailark/core/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@docsynapse/core/ui/avatar'
 
 export default function TestimonialSection() {
     const testimonials = [

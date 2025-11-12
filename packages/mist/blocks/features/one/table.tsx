@@ -1,4 +1,4 @@
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 
 const MESCHAC_AVATAR = 'https://avatars.githubusercontent.com/u/47919550?v=4'
 const BERNARD_AVATAR = 'https://avatars.githubusercontent.com/u/31113941?v=4'

@@ -1,9 +1,9 @@
-import { Button } from '@tailark/core/ui/button'
-import { Input } from '@tailark/core/ui/input'
-import { Label } from '@tailark/core/ui/label'
-import { Textarea } from '@tailark/core/ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@tailark/core/ui/select'
-import { Card } from '@tailark/core/ui/card'
+import { Button } from '@docsynapse/core/ui/button'
+import { Input } from '@docsynapse/core/ui/input'
+import { Label } from '@docsynapse/core/ui/label'
+import { Textarea } from '@docsynapse/core/ui/textarea'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@docsynapse/core/ui/select'
+import { Card } from '@docsynapse/core/ui/card'
 
 export default function ContactSection() {
     return (

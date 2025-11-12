@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@tailark/core/lib/utils'
+import { cn } from '@docsynapse/core/lib/utils'
 
 const cardVariants = cva('text-card-foreground rounded-[1.25rem] transition-all duration-250 hover:-translate-y-[2px] hover:shadow-lg backdrop-blur-md border-white/40 bg-white/70 dark:bg-slate-900/40', {
     variants: {

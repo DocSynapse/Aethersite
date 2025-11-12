@@ -1,9 +1,9 @@
 import { Card } from '@mist/components/ui/card'
-import { Input } from '@tailark/core/ui/input'
-import { Textarea } from '@tailark/core/ui/textarea'
+import { Input } from '@docsynapse/core/ui/input'
+import { Textarea } from '@docsynapse/core/ui/textarea'
 import { Button } from '@mist/components/ui/button'
-import { Label } from '@tailark/core/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@tailark/core/ui/select'
+import { Label } from '@docsynapse/core/ui/label'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@docsynapse/core/ui/select'
 import Link from 'next/link'
 
 export default function ContactSection() {

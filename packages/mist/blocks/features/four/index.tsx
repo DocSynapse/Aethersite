@@ -1,6 +1,6 @@
 'use client'
-import { cn } from '@tailark/core/lib/utils'
-import { ToggleGroup, ToggleGroupItem } from '@tailark/core/ui/toggle-group'
+import { cn } from '@docsynapse/core/lib/utils'
+import { ToggleGroup, ToggleGroupItem } from '@docsynapse/core/ui/toggle-group'
 import { Bold, Calendar1, Ellipsis, Italic, Strikethrough, Underline } from 'lucide-react'
 import { Button } from '@mist/components/ui/button'
 import { Card } from '@mist/components/ui/card'

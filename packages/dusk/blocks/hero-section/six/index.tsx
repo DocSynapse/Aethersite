@@ -1,6 +1,6 @@
 'use client'
-import { Logo } from '@tailark/core/components/logo'
-import { Button } from '@tailark/core/ui/button'
+import { Logo } from '@docsynapse/core/components/logo'
+import { Button } from '@docsynapse/core/ui/button'
 import { ArrowRight, Mail, Menu, SendHorizonal, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

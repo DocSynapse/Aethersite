@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from '@tailark/core/components/logo'
+import { Logo } from '@docsynapse/core/components/logo'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import React from 'react'
 
 const menuItems = [
