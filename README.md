@@ -1,4 +1,23 @@
-Sentra Aethersite
+<div align="center" style="margin: 60px 0;">
+  <h1 style="font-size: 4em; 
+             font-weight: 800; 
+             letter-spacing: 2px; 
+             margin-bottom: 20px;
+             color: #1e293b;">
+    SENTRA AETHERSITE
+  </h1>
+  <p style="font-size: 1.3em; 
+            color: #64748b; 
+            font-weight: 400;
+            letter-spacing: 0.5px;">
+    <em>Technical Documentation for Prototype Platform</em>
+  </p>
+  <hr style="width: 200px; 
+             margin: 30px auto; 
+             border: none; 
+             border-top: 2px solid #e2e8f0;">
+</div>
+
 <!-- Dengan border dan shadow -->
 ![Description](https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe)
      
