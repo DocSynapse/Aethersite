@@ -1,4 +1,4 @@
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/cores'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core'
 import { cn } from '@docsynapse/core/lib/utils'
 import { LogoIcon } from '@docsynapse/core'
 import { Button } from '@docsynapse/core/ui/button'

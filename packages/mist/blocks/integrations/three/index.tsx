@@ -1,6 +1,6 @@
 import { Card } from '@mist/components/ui/card'
 import * as React from 'react'
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/cores'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core'
 
 export default function Integrations() {
     return (

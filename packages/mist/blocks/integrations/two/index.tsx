@@ -1,5 +1,5 @@
 import { Button } from '@mist/components/ui/button'
-import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@docsynapse/cores'
+import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@docsynapse/core'
 import Link from 'next/link'
 
 export default function Integrations() {
