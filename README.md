@@ -1,292 +1,248 @@
-# 🏥 SENTRA Healthcare AI Platform
+<!-- → Architecture & Build by DocSynapse -->
+<!-- Intelligent by Design. Crafted for Humanity. -->
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
-  <img src="https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react" alt="React"/>
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.6-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS"/>
-  <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
+
+# 🌌 AETHERSITE  
+### The Digital Home of **Sentra Entity**
+
+<p align="center">
+  <strong>PROTOTYPE – UNDER DEVELOPMENT</strong><br/>
+  Next-Generation AI Healthcare Assistant Platform
+</p>
+
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" width="240" alt="Sentra Logo">
+</p>
+
+</div>  <!-- 🔹 Tutup di sini agar bagian bawah kembali rata kiri -->
+
+---
+
+## ⚙️ DEVELOPMENT STATUS
+
+> **Note:** This is the **AETHERSITE PROTOTYPE** — an active development version of Sentra Entity’s digital home, serving as a research and design foundation for the final release.
+
+**Version:** 0.1.0 (Prototype Phase)  
+**Status:** Development / Testing  
+**Last Updated:** November 2025  
+**Developed by:** Sentra Development Team (DocSynapse)
+
+---
+
+## 📖 About Aethersite
+
+**Aethersite** serves as the digital ecosystem for **Sentra Entity** — an AI healthcare assistant designed to enhance both the *efficiency* and *empathy* of medical professionals.
+
+### What is Sentra Entity?
+
+Sentra Entity is embodied in an AI-driven character named **AUDREY** (*Advanced Unified Digital Resource Entity for You*).  
+Through Aethersite, **AUDREY** becomes a responsive and adaptive companion for healthcare teams, capable of delivering:
+
+- 🤖 **AI Personality Engine** — Emotionally aware and context-sensitive responses  
+- 💬 **Natural Interaction** — Conversational intelligence and empathy  
+- 🏥 **Healthcare Focus** — Designed for clinical environments and medical data flows  
+- 🎨 **Visual Identity** — Manifested through the *ArtificialHero* core component  
+
+### Prototype Objectives
+
+- Validate architecture and design principles  
+- Refine user experience and data flow  
+- Test technical scalability and performance  
+- Establish the foundation for Sentra Entity’s full deployment  
+
+---
+
+## 🏗️ TECHNOLOGY ARCHITECTURE
+
+### Tech Stack
+
+<div align="center">
+
+![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.6-38B2AC?style=for-the-badge&logo=tailwind-css)
+![GSAP](https://img.shields.io/badge/GSAP-3.13.0-88CE02?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)
+
 </div>
 
-## 🌟 About
+**Framework:** Next.js 15+ (App Router, RSC, Suspense, Streaming)  
+**Language:** TypeScript 5+  
+**Styling:** Tailwind CSS 4 (JIT, scalable theme system)  
+**Animation:** GSAP 3.13+ (scroll-based timelines, GPU optimized)  
+**Package Manager:** pnpm 9.10 (monorepo support, workspace linking)  
+**Deployment:** Vercel (edge-ready, zero-config CI/CD)
 
-**SENTRA** is a cutting-edge healthcare AI platform that integrates advanced neural algorithms with clinical expertise to transform primary care services. Through **ADDI** (Augmented Artificial Intelligent Diagnostic Integrated), we ensure smarter, safer, and more efficient patient care.
+---
 
-Meet **AUDREY** - our **Augmented Understanding & Dynamic Reasoning Entity**, an AI visualization that demonstrates the evolution of artificial intelligence empathy and understanding in healthcare contexts.
+## ⭐ CORE COMPONENT: ArtificialHero
 
-### ✨ Key Features
+**ArtificialHero** represents the visual and interactive layer of **AUDREY**, the Sentra AI Entity.
 
-- 🧠 **AI-Powered Diagnostics**: Advanced neural intelligence for healthcare analysis
-- 💫 **Immersive Visualization**: Real-time AI entity animation with GSAP
-- 📱 **Responsive Design**: Optimized for all devices and screen sizes
-- ⚡ **Performance-First**: Built with Next.js 15 and React 19 for optimal speed
-- 🎨 **Modern UI/UX**: Tailark UI components with Tailwind CSS
-- 🔒 **Privacy & Security**: HIPAA-compliant healthcare data protection
+**Core Features**
+- 🎭 Adaptive personality-driven interaction  
+- 🎨 Canvas-based rendering and animation  
+- ✨ GSAP timeline orchestration  
+- 📜 Scroll-triggered transitions  
+- 🚀 Optimized for performance and smooth experience  
 
-## 🚀 Live Demo
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl" alt="ArtificialHero Architecture" width="800"/>
+</div>
 
-👉 **[View Live Site](https://your-vercel-domain.vercel.app)**
+---
 
-## 🛠 Tech Stack
+## 🚀 DEVELOPMENT GUIDE
 
-| Category | Technology |
-|----------|-------------|
-| **Framework** | ![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?logo=next.js) |
-| **UI Library** | ![React](https://img.shields.io/badge/React-19.1.0-blue?logo=react) |
-| **Language** | ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript) |
-| **Styling** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.6-38B2AC?logo=tailwind-css) |
-| **UI Components** | DocSynapse UI, shadcn/ui |
-| **Animations** | ![GSAP](https://img.shields.io/badge/GSAP-3.12-green?logo=greensock) |
-| **Package Manager** | ![pnpm](https://img.shields.io/badge/pnpm-9.10.0-F69220?logo=pnpm) |
-| **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Platform-black?logo=vercel) |
-
-## 📋 Prerequisites
-
-Ensure you have the following installed:
-
-- **Node.js** >= 18.0.0
-- **pnpm** >= 9.0.0
-- **Git** for version control
-
-## 🚀 Getting Started
-
-### 1. Clone the Repository
-
+### Prerequisites
 ```bash
-git clone https://github.com/DocSynapse/Aethersite.git
-cd Aethersite
+node --version     # Node.js 20+
+npm install -g pnpm@9.10.0
 ```
 
-### 2. Install Dependencies
-
+### Installation
 ```bash
+git clone <repository-url>
+cd Aethersite
 pnpm install
 ```
 
-### 3. Environment Setup
-
-Create a `.env.local` file in the root directory:
-
-```env
-# Development
-NODE_ENV=development
-PORT=3000
-
-# Production (optional)
-NODE_ENV=production
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-```
-
-### 4. Run Development Server
-
+### Commands
 ```bash
-pnpm dev
+pnpm dev       # Start local dev server (localhost:3000)
+pnpm build     # Build production bundle
+pnpm start     # Run production server
+pnpm lint      # Run ESLint checks
+pnpm registry:build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-### 5. Build for Production
-
-```bash
-pnpm build
-pnpm start
-```
-
-## 📁 Project Structure
-
+### Project Structure
 ```
 Aethersite/
 ├── apps/
-│   └── www/
-│       ├── app/                    # Next.js App Router
-│       │   ├── (app)/
-│       │   │   ├── page.tsx       # Homepage route
-│       │   │   └── layout.tsx     # Root layout
-│       │   └── globals.css        # Global styles
-│       ├── components/
-│       │   └── ui/
-│       │       ├── artificial-hero.tsx  # AI visualization component
-│       │       └── ...                 # Other UI components
-│       ├── public/                 # Static assets
-│       └── package.json
-├── packages/                      # Monorepo packages
-├── package.json                   # Root package configuration
-├── pnpm-workspace.yaml          # Workspace configuration
-├── turbo.json                   # Turborepo configuration
-└── README.md
+│   └── www/               # Web application
+│       ├── app/           # Next.js app directory
+│       ├── components/    # React components
+│       ├── lib/           # Utility functions
+│       └── public/        # Static assets
+├── packages/
+│   ├── core/              # Core logic
+│   ├── dusk-kit/          # Dark theme kit
+│   ├── mist-kit/          # Light theme kit
+│   └── ts-config/         # Shared TypeScript config
+└── package.json
 ```
 
-## 🎯 Key Components
+---
 
-### ArtificialHero Component
+## 🎨 DESIGN SYSTEM
 
-The centerpiece of our website - an immersive AI visualization featuring:
+**Typography:** Inter + JetBrains Mono  
+**Color Palette:**  
+- Trust → `#0ea5e9`  
+- Vitality → `#10b981`  
+- Precision → `#8b5cf6`  
+- Warmth → `#f59e0b`
 
-- **AUDREY Entity**: Dynamic AI character with personality
-- **Real-time Animations**: GSAP-powered visual effects
-- **Interactive Elements**: Scroll-triggered animations
-- **Performance Optimized**: Canvas-based rendering
+**Accessibility Standard:** WCAG 2.1 AA  
+✅ Keyboard navigation  
+✅ Screen reader compatibility  
+✅ Color contrast compliance  
 
-### Core Features
+---
 
-- **Responsive Typography**: Clamp-based fluid typography
-- **Dark Theme**: Professional healthcare aesthetic
-- **Accessibility**: WCAG 2.1 compliant design
-- **SEO Optimized**: Meta tags and structured data
+## 📊 PERFORMANCE TARGETS
 
-## 🔧 Development Commands
+| Metric | Target |
+|--------|--------|
+| FCP | < 1.5s |
+| LCP | < 2.5s |
+| TTI | < 2.0s |
+| CLS | < 0.1 |
+| TBT | < 200ms |
 
-```bash
-# Development
-pnpm dev              # Start development server
-pnpm build            # Build for production
-pnpm start            # Start production server
-pnpm lint             # Run ESLint
-pnpm type-check       # TypeScript type checking
+---
 
-# Package Management
-pnpm install          # Install dependencies
-pnpm update           # Update dependencies
-pnpm clean            # Clean node_modules
-```
+## 🔒 SECURITY & COMPLIANCE
 
-## 🎨 Customization
+**Planned Implementations:**
+- Content Security Policy (CSP)  
+- HIPAA-aligned data protection  
+- End-to-end encryption  
+- Secure role-based access control  
+- TLS 1.3 enforcement  
 
-### Theme Configuration
+---
 
-The design system uses DocSynapse UI with custom theme tokens:
+## 🗺️ ROADMAP
 
-```typescript
-// Custom theme configuration
-const theme = {
-  colors: {
-    primary: {
-      50: '#eff6ff',
-      900: '#1e3a8a',
-    },
-    // Healthcare-specific color palette
-  }
-}
-```
+### Phase 1 – Foundation (Q4 2025)
+- [x] Prototype build  
+- [x] Core functionality  
+- [ ] UX refinement  
+- [ ] Integration tests  
 
-### Component Customization
+### Phase 2 – Enhancement (Q1 2026)
+- [ ] Advanced UI interaction  
+- [ ] Accessibility upgrade  
+- [ ] Performance optimization  
 
-Components are built with shadcn/ui and can be customized:
+### Phase 3 – Production (Q2–Q3 2026)
+- [ ] CI/CD pipeline  
+- [ ] Security audit  
+- [ ] Beta release  
 
-```bash
-# Add new components
-pnpm dlx shadcn add [component-name]
+---
 
-# Customize existing components
-# Edit components/ui/[component].tsx
-```
+## 🤝 CONTRIBUTION
 
-## 📊 Performance
+This prototype is currently **closed-source** for internal development.  
+Future contribution guidelines will include:
+- Conventional Commits  
+- TypeScript strict mode  
+- 80%+ test coverage  
+- Dual maintainer review  
 
-- **Lighthouse Score**: 95+ Performance
-- **Bundle Size**: < 200KB gzipped
-- **First Contentful Paint**: < 1.5s
-- **Time to Interactive**: < 2s
+---
 
-## 🔒 Security Features
+## 👥 TEAM
 
-- **Content Security Policy**: Strict CSP headers
-- **XSS Protection**: Built-in Next.js protections
-- **HIPAA Compliance**: Healthcare data protection standards
-- **HTTPS Only**: Production deployments use HTTPS
+**Maintained by:** Sentra Development Team  
+**Framework Concept:** DocSynapse
 
-## 🌐 Browser Support
+**With ❤️ to Del, Aldebaran, Aimee, Audrey
 
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile Safari 14+
-- Chrome Mobile 90+
+---
 
-## 📈 Performance Metrics
+## 📞 CONTACT
 
-| Metric | Value |
-|--------|-------|
-| First Contentful Paint | 1.2s |
-| Largest Contentful Paint | 1.8s |
-| Cumulative Layout Shift | 0.05 |
-| Time to Interactive | 1.5s |
+**Security:** security@sentra.health *(placeholder)*  
+**General:** info@sentra.health *(placeholder)*  
 
-## 🤝 Contributing
+---
 
-We welcome contributions! Please follow our guidelines:
+## 📄 LICENSE
 
-### Development Workflow
+See [LICENSE.md](./LICENSE.md) for details.
 
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
+---
 
-### Code Standards
+## 🎯 CLOSING NOTE
 
-- Use **TypeScript** for all new code
-- Follow **ESLint** configuration
-- Write **meaningful commit messages**
-- Include **tests** for new features
-- Ensure **accessibility** standards
+> **Aethersite** is more than a prototype — it’s the digital foundation for **Sentra Entity**, a vision where technology amplifies human care.
 
-### Pull Request Template
-
-```markdown
-## Description
-Brief description of changes
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
-
-## Testing
-- [ ] Code compiles without errors
-- [ ] All tests pass
-- [ ] Manual testing completed
-
-## Checklist
-- [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Credits & Attribution
-
-### Core Team
-- **Dr. Ferdi Sentra** - Founder & Chief Architect
-- Inspired by commitment to sustainable healthcare innovation
-
-### Technologies
-- [Next.js](https://nextjs.org/) - React framework
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
-- [DocSynapse UI](https://github.com/DocSynapse) - Healthcare AI UI components
-- [GSAP](https://greensock.com/gsap/) - Animation library
-- [Vercel](https://vercel.com/) - Deployment platform
-
-### Acknowledgments
-
-- Built with ❤️ for the healthcare community
-- Dedicated to advancing medical AI technology
-- Empowering doctors to focus on patient care
-
-## 📞 Contact
-
-- **Project Maintainer**: [Dr. Ferdi Sentra](mailto:dr.ferdi.sentra@sentra-aether.com)
-- **Issues & Bugs**: [GitHub Issues](https://github.com/DocSynapse/Aethersite/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/DocSynapse/Aethersite/discussions)
+Each architectural decision within this system represents a pursuit of precision, empathy, and durability.
+We believe great technology is not just engineered — it's *crafted with purpose*.
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ for advancing healthcare AI technology</p>
-  <p>© 2024 SENTRA Healthcare AI Platform. All rights reserved.</p>
+
+**🌌 AETHERSITE — Home of Sentra Entity 🌌**  
+*Building the future of healthcare AI, one line of code at a time.*
+
+**STATUS: PROTOTYPE**
+
 </div>
