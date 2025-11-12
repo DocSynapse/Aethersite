@@ -8,24 +8,13 @@
   <img src="https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel" alt="Vercel"/>
 </div>
 
-## 🌟 About
-
 **SENTRA** is a cutting-edge healthcare AI platform that integrates advanced neural algorithms with clinical expertise to transform primary care services. Through **ADDI** (Augmented Artificial Intelligent Diagnostic Integrated), we ensure smarter, safer, and more efficient patient care.
 
 Meet **AUDREY** - our **Augmented Understanding & Dynamic Reasoning Entity**, an AI visualization that demonstrates the evolution of artificial intelligence empathy and understanding in healthcare contexts.
 
-### ✨ Key Features
+This website is a functional prototype developed for the sole purpose of evaluating design, user flow (UX), and initial technical testing.
 
-- 🧠 **AI-Powered Diagnostics**: Advanced neural intelligence for healthcare analysis
-- 💫 **Immersive Visualization**: Real-time AI entity animation with GSAP
-- 📱 **Responsive Design**: Optimized for all devices and screen sizes
-- ⚡ **Performance-First**: Built with Next.js 15 and React 19 for optimal speed
-- 🎨 **Modern UI/UX**: Tailark UI components with Tailwind CSS
-- 🔒 **Privacy & Security**: HIPAA-compliant healthcare data protection
-
-## 🚀 Live Demo
-
-👉 **[View Live Site](https://your-vercel-domain.vercel.app)**
+All presented content, data, and functionality are placeholders, remain under active development, and do not represent the final Sentra product. This version is confidential and intended strictly for internal use or authorized limited review.
 
 ## 🛠 Tech Stack
 
@@ -95,7 +84,7 @@ pnpm start
 ## 📁 Project Structure
 
 ```
-tailark-website/
+aethersite/
 ├── apps/
 │   └── www/
 │       ├── app/                    # Next.js App Router
