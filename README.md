@@ -1,13 +1,10 @@
 Sentra Aethersite
 <!-- Dengan border dan shadow -->
-<img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" 
-     alt="Architecture Diagram"
-     style="max-width: 900px; 
-            width: 100%; 
-            border: 2px solid #d1d5db; 
-            border-radius: 8px;
-            padding: 10px;
-            background: white;">
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" 
+       alt="Sentra Architecture"
+       style="max-width: 1200px; width: 100%; border-radius: 8px;">
+</div>
      
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
