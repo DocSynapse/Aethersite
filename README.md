@@ -35,7 +35,7 @@ Meet **AUDREY** - our **Augmented Understanding & Dynamic Reasoning Entity**, an
 | **UI Library** | ![React](https://img.shields.io/badge/React-19.1.0-blue?logo=react) |
 | **Language** | ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript) |
 | **Styling** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.6-38B2AC?logo=tailwind-css) |
-| **UI Components** | Tailark UI, shadcn/ui |
+| **UI Components** | DocSynapse UI, shadcn/ui |
 | **Animations** | ![GSAP](https://img.shields.io/badge/GSAP-3.12-green?logo=greensock) |
 | **Package Manager** | ![pnpm](https://img.shields.io/badge/pnpm-9.10.0-F69220?logo=pnpm) |
 | **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Platform-black?logo=vercel) |
@@ -53,8 +53,8 @@ Ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/tailark-website.git
-cd tailark-website
+git clone https://github.com/DocSynapse/Aethersite.git
+cd Aethersite
 ```
 
 ### 2. Install Dependencies
@@ -95,7 +95,7 @@ pnpm start
 ## 📁 Project Structure
 
 ```
-tailark-website/
+Aethersite/
 ├── apps/
 │   └── www/
 │       ├── app/                    # Next.js App Router
@@ -154,7 +154,7 @@ pnpm clean            # Clean node_modules
 
 ### Theme Configuration
 
-The design system uses Tailark UI with custom theme tokens:
+The design system uses DocSynapse UI with custom theme tokens:
 
 ```typescript
 // Custom theme configuration
@@ -268,7 +268,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Technologies
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
-- [Tailark UI](https://tailark.com/) - Healthcare UI components
+- [DocSynapse UI](https://github.com/DocSynapse) - Healthcare AI UI components
 - [GSAP](https://greensock.com/gsap/) - Animation library
 - [Vercel](https://vercel.com/) - Deployment platform
 
@@ -280,9 +280,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Project Maintainer**: [Your Name](mailto:your.email@example.com)
-- **Issues & Bugs**: [GitHub Issues](https://github.com/your-username/tailark-website/issues)
-- **Feature Requests**: [GitHub Discussions](https://github.com/your-username/tailark-website/discussions)
+- **Project Maintainer**: [Dr. Ferdi Sentra](mailto:dr.ferdi.sentra@sentra-aether.com)
+- **Issues & Bugs**: [GitHub Issues](https://github.com/DocSynapse/Aethersite/issues)
+- **Feature Requests**: [GitHub Discussions](https://github.com/DocSynapse/Aethersite/discussions)
 
 ---
 

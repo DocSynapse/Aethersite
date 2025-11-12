@@ -1,11 +1,11 @@
 {
-  "name": "@tailark/www",
-  "version": "0.1.0",
+  "name": "@docsynapse/www",
+  "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "Méschac Irung",
-    "email": "meschacirung@gmail.com",
-    "url": "https://x.com/MeschacIrung"
+    "name": "Dr. Ferdi Sentra",
+    "email": "dr.ferdi.sentra@sentra-aether.com",
+    "url": "https://github.com/DocSynapse"
   },
   "packageManager": "pnpm@9.10.0",
   "workspaces": [
@@ -60,10 +60,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailark/core": "workspace:*",
-    "@tailark/dusk": "workspace:*",
-    "@tailark/mist": "workspace:*",
-    "@tailark/ts-config": "workspace:*",
+    "@docsynapse/core": "workspace:*",
+    "@docsynapse/dusk": "workspace:*",
+    "@docsynapse/mist": "workspace:*",
+    "@docsynapse/ts-config": "workspace:*",
     "@tailwindcss/postcss": "^4.1.6",
     "@types/node": "^20",
     "@types/react": "^19",
