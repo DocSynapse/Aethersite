@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Button } from '@docsynapse/core/ui/button'
 import { Label } from '@docsynapse/core/ui/label'
 import { Input } from '@docsynapse/core/ui/input'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 
 const enterpriseLinks = [
     { href: '#', label: 'About' },

@@ -1,4 +1,4 @@
-import { Gemini, Replit, GooglePaLM } from '@docsynapse/core/components/logos'
+import { Gemini, Replit, GooglePaLM } from '@docsynapse/cores'
 import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
 import { Plus } from 'lucide-react'

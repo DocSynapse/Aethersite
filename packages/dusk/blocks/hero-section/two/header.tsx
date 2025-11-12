@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@docsynapse/core/ui/button'
 import React from 'react'

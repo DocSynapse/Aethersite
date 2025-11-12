@@ -1,5 +1,5 @@
 'use client'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import { Button } from '@docsynapse/core/ui/button'
 import { ArrowRight, Mail, Menu, SendHorizonal, X } from 'lucide-react'
 import Image from 'next/image'

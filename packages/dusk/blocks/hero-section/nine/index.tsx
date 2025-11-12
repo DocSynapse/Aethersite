@@ -1,5 +1,5 @@
 'use client'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Button } from '@docsynapse/core/ui/button'

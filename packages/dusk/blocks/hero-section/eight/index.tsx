@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import { ArrowRight, Menu, Rocket, X } from 'lucide-react'
 import { Button } from '@docsynapse/core/ui/button'
 import Image from 'next/image'

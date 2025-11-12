@@ -3,7 +3,7 @@ import { Card } from '@docsynapse/core/ui/card'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import * as React from 'react'
-import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/core/components/logos'
+import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@docsynapse/cores'
 
 export default function IntegrationsSection() {
     return (

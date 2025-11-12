@@ -1,4 +1,4 @@
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import { Button } from '@docsynapse/core/ui/button'
 import { Input } from '@docsynapse/core/ui/input'
 import { Label } from '@docsynapse/core/ui/label'

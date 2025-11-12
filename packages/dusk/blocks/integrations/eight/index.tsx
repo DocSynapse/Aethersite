@@ -1,4 +1,4 @@
-import { Gemini, Replit, GooglePaLM, MagicUI, VSCodium, MediaWiki } from '@docsynapse/core/components/logos'
+import { Gemini, Replit, GooglePaLM, MagicUI, VSCodium, MediaWiki } from '@docsynapse/cores'
 import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
 

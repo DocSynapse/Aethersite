@@ -1,4 +1,4 @@
-import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@docsynapse/core/components/logos'
+import { Gemini, GooglePaLM, Replit, MediaWiki, MagicUI, VSCodium } from '@docsynapse/cores'
 
 export default function Integrations() {
     return (

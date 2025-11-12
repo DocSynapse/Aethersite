@@ -1,4 +1,4 @@
-import { LogoIcon } from '@docsynapse/core/components/logo'
+import { LogoIcon } from '@docsynapse/core'
 import { Button } from '@mist/components/ui/button'
 import { Input } from '@docsynapse/core/ui/input'
 import { Label } from '@docsynapse/core/ui/label'

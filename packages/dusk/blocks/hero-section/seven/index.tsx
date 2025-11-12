@@ -8,7 +8,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
 import Link from 'next/link'
-import { Logo } from '@docsynapse/core/components/logo'
+import { Logo } from '@docsynapse/core'
 import { ArrowRight, Menu, Rocket, X } from 'lucide-react'
 import { Button } from '@docsynapse/core/ui/button'
 

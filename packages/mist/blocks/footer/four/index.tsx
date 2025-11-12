@@ -1,4 +1,4 @@
-import { LogoIcon } from '@docsynapse/core/components/logo'
+import { LogoIcon } from '@docsynapse/core'
 import Link from 'next/link'
 
 const links = [
