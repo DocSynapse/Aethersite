@@ -1,6 +1,6 @@
 Sentra Aethersite
 
-<img src="https://drive.google.com/file/d/1TP4eC2rkwpS-nMh-PqT_V0JJllrnTGUZ/view?usp=drive_link/>/>
+![Description](https://drive.google.com/uc?export=view&id=1TP4eC2rkwpS-nMh-PqT_V0JJllrnTGUZ)
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
   <img src="https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react" alt="React"/>
