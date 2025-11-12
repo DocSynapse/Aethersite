@@ -19,7 +19,11 @@
 </div>
 
 <!-- Dengan border dan shadow -->
-![Description](https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe)
+<div align="center" style="margin: 40px 0;">
+  <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" 
+       alt="Sentra Architecture"
+       style="max-width: 1200px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+</div>
      
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-15.3.2-black?style=for-the-badge&logo=next.js" alt="Next.js"/>
