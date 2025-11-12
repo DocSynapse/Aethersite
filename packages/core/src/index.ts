@@ -1,2 +1,2 @@
-export { Logo } from './components/logo'
+export { Logo, LogoIcon } from './components/logo'
 export { BorderBeam } from './magicui/border-beam'
