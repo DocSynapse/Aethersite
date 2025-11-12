@@ -1,9 +1,18 @@
 Sentra Aethersite
 <!-- Dengan border dan shadow -->
 <div align="center">
+<div align="center">
   <img src="https://drive.google.com/uc?export=view&id=1olm1Dlk7wDYIYXRqU8GlhtuPGVYYPoLe" 
-       alt="Sentra Architecture"
-       style="max-width: 1200px; width: 100%; border-radius: 8px;">
+       alt="Sentra System Architecture"
+       style="max-width: 1200px; 
+              width: 100%; 
+              height: auto;
+              border-radius: 12px; 
+              box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+              border: 1px solid #e5e7eb;">
+  <br>
+  <em>Figure 1: System Architecture Overview</em>
+</div>
 </div>
      
 <div align="center">
