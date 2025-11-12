@@ -1,4 +1,4 @@
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import { PreviewCanvas } from './preview-canvas'
 import Image from 'next/image'
 import Link from 'next/link'

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { mistTestimonials as testimonials } from '@/lib/testimonials'

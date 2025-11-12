@@ -1,6 +1,6 @@
 import { SiteFooter } from '@/components/site-footer'
 import { cn } from '@/lib/utils'
-import { Button } from '@tailark/core/ui/button'
+import { Button } from '@docsynapse/core/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { testimonials } from '@/lib/testimonials'

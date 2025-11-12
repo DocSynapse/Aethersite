@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import Image from 'next/image'
-import { AspectRatio } from '@tailark/core/ui/aspect-ratio'
+import { AspectRatio } from '@docsynapse/core/ui/aspect-ratio'
 import { HeroPagesIllustration } from '../hero-pages-illustration'
 
 interface PreviewCanvasProps {
