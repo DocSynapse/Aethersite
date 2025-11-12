@@ -1,0 +1,20 @@
+{
+  "extends": "@tailark/ts-config/base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"],
+      "@tailark/core/*" : ["../../packages/core/src/*"],
+      "@tailark/mist/*" : ["../../packages/mist-kit/*"],
+      "@tailark/dusk/*" : ["../../packages/dusk-kit/*"],
+      "@mist/*" : ["../../packages/mist-kit/*"]
+    }
+  },
+  "include": [
+    "./next-env.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

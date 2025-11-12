@@ -1,0 +1,360 @@
+@import 'tailwindcss';
+@source "../../../packages/core";
+@source "../../../packages/dusk-kit";
+@source "../../../packages/mist-kit";
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline{
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'Fira Code', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  /* StackPilot Hero Section Animations */
+  @keyframes word-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.8);
+      filter: blur(10px);
+    }
+    50% {
+      opacity: 0.8;
+      transform: translateY(10px) scale(0.95);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes grid-draw {
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.15;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.3;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.2;
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-5px) translateX(-3px);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translateY(-15px) translateX(7px);
+      opacity: 0.8;
+    }
+  }
+
+  /* New Background Animations */
+  @keyframes line-draw {
+    0% {
+      stroke-dasharray: 0, 1000;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      stroke-dasharray: 1000, 0;
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.2);
+      filter: blur(1px);
+    }
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translateY(-15px) translateX(10px) scale(1.1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-8px) translateX(-5px) scale(0.9);
+      opacity: 0.5;
+    }
+    75% {
+      transform: translateY(-20px) translateX(15px) scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  /* AI Persona Animations */
+  @keyframes persona-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.8);
+      filter: blur(8px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(10px) scale(0.95);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes node-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* AI Face Animations */
+  @keyframes ai-face-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(40px) scale(0.8);
+      filter: blur(8px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(15px) scale(0.95);
+      filter: blur(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  :root {
+    --background: var(--color-white);
+    --foreground: var(--color-zinc-950);
+    --card: var(--color-white);
+    --card-foreground: var(--color-zinc-950);
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-zinc-950);
+    --primary: var(--color-zinc-950);
+    --primary-foreground:var(--color-white);
+    --secondary: var(--color-zinc-100);
+    --secondary-foreground: var(--color-zinc-950);
+    --muted: var(--color-zinc-100);
+    --muted-foreground: var(--color-zinc-500);
+    --accent: var(--color-zinc-100);
+    --accent-foreground: var(--color-zinc-950);
+    --destructive: var(--color-red-600);
+    --destructive-foreground:var(--color-white);
+    --border: var(--color-zinc-200);
+    --input: var(--color-zinc-200);
+    --ring: var(--color-zinc-950);
+    --chart-1: var(--color-blue-500);
+    --chart-2: var(--color-indigo-500);
+    --chart-3: var(--color-purple-500);
+    --chart-4: var(--color-indigo-400);
+    --chart-5: var(--color-red-500);
+    --radius: 0.5rem
+  }
+
+  .dark {
+    --background: var(--color-zinc-950);
+    --foreground:var(--color-white);
+    --card: var(--color-zinc-950);
+    --card-foreground:var(--color-white);
+    --popover: var(--color-zinc-950);
+    --popover-foreground:var(--color-white);
+    --primary:var(--color-white);
+    --primary-foreground: var(--color-zinc-950);
+    --secondary: var(--color-zinc-800);
+    --secondary-foreground:var(--color-white);
+    --muted: var(--color-zinc-800);
+    --muted-foreground: var(--color-zinc-400);
+    --accent: var(--color-zinc-800);
+    --accent-foreground:var(--color-white);
+    --destructive: var(--color-red-600);
+    --destructive-foreground:var(--color-white);
+    --border: var(--color-zinc-800);
+    --input: var(--color-zinc-800);
+    --ring: var(--color-white);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .line{
+    counter-increment: css-counter 1;
+    @apply relative pl-7 before:absolute before:text-white/20 before:inset-y-0 before:transition-colors before:duration-200 before:content-[counter(css-counter)] before:text-xs before:left-0 before:my-auto hover:before:text-white
+  }
+}
+
+[data-theme="mist"] {
+  --radius: 0.625rem;
+  --background: var(--color-white);
+  --foreground: var(--color-zinc-950);
+  --card: var(--color-white);
+  --card-foreground: var(--color-zinc-950);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-zinc-950);
+  --primary: var(--color-indigo-500);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-indigo-100);
+  --secondary-foreground: var(--color-indigo-600);
+  --muted: var(--color-zinc-100);
+  --muted-foreground: var(--color-zinc-600);
+  --accent: var(--color-zinc-700);
+  --accent-foreground: var(--color-white);
+  --destructive: var(--color-red-600);
+  --border: var(--color-zinc-200);
+  --input: var(--color-zinc-200);
+  --ring: var(--color-indigo-500);
+
+  @variant dark {
+    --radius: 0.625rem;
+    --background: var(--color-white);
+    --foreground: var(--color-zinc-950);
+    --card: var(--color-white);
+    --card-foreground: black;
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-zinc-950);
+    --primary: var(--color-indigo-500);
+    --primary-foreground: var(--color-white);
+    --secondary: var(--color-indigo-100);
+    --secondary-foreground: var(--color-indigo-600);
+    --muted: var(--color-zinc-100);
+    --muted-foreground: var(--color-zinc-600);
+    --accent: var(--color-zinc-700);
+    --accent-foreground: var(--color-white);
+    --destructive: var(--color-red-600);
+    --border: var(--color-zinc-200);
+    --input: var(--color-zinc-200);
+    --ring: var(--color-indigo-500);
+  }
+
+  @apply *:text-foreground
+}
