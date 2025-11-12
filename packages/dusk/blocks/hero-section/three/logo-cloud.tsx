@@ -1,5 +1,5 @@
-import { InfiniteSlider } from '@docsynapse/core/motion-primitives/infinite-slider'
-import { ProgressiveBlur } from '@docsynapse/core/motion-primitives/progressive-blur'
+import { InfiniteSlider } from '@docsynapse/core'
+import { ProgressiveBlur } from '@docsynapse/core'
 
 export const LogoCloud = () => {
     return (

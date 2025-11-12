@@ -3,7 +3,7 @@ import { LogoIcon } from '@docsynapse/core'
 import { cn } from '@docsynapse/core/lib/utils'
 import { Button } from '@docsynapse/core/ui/button'
 import Link from 'next/link'
-import { InfiniteSlider } from '@docsynapse/core/motion-primitives/infinite-slider'
+import { InfiniteSlider } from '@docsynapse/core'
 
 export default function IntegrationsSection() {
     return (

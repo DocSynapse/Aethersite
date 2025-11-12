@@ -1,8 +1,8 @@
 import React from 'react'
 import { Mail, SendHorizonal } from 'lucide-react'
 import { Button } from '@docsynapse/core/ui/button'
-import { TextEffect } from '@docsynapse/core/motion-primitives/text-effect'
-import { AnimatedGroup } from '@docsynapse/core/motion-primitives/animated-group'
+import { TextEffect } from '@docsynapse/core'
+import { AnimatedGroup } from '@docsynapse/core'
 import { HeroHeader } from './header'
 import { LogoCloud } from './logo-cloud'
 

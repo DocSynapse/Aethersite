@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { Button } from '@docsynapse/core/ui/button'
 import Image from 'next/image'
 import { HeroHeader } from './header'
-import { InfiniteSlider } from '@docsynapse/core/motion-primitives/infinite-slider'
-import { ProgressiveBlur } from '@docsynapse/core/motion-primitives/progressive-blur'
+import { InfiniteSlider, ProgressiveBlur } from '@docsynapse/core'
 
 export default function HeroSection() {
     return (

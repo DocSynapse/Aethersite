@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Button } from '@docsynapse/core/ui/button'
 import Image from 'next/image'
-import { TextEffect } from '@docsynapse/core/motion-primitives/text-effect'
-import { AnimatedGroup } from '@docsynapse/core/motion-primitives/animated-group'
+import { TextEffect } from '@docsynapse/core'
+import { AnimatedGroup } from '@docsynapse/core'
 import { HeroHeader } from './header'
 
 const transitionVariants = {
