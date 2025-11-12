@@ -14,7 +14,7 @@
             margin-top: 24px;
             font-weight: 300;
             letter-spacing: 1px;">
-    Technical Documentation for Prototype Platform
+    Technical Documentation for Prototype Platform by DocSynapse
   </p>
 </div>
 
@@ -104,12 +104,11 @@ Dynamic AI character with personality engine responding to user interactions in 
 ### Visual Implementation
 
 ```
-[[PLACEHOLDER: ArtificialHero Component Screenshot]
-Dimensions: 1920x1080px
-Format: PNG with transparency
-Content: Full-screen view of AUDREY entity with annotation layer](https://drive.google.com/file/d/1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl/view?usp=drive_link)
-```
-
+<div align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1i6LQ_9UvWFRnJcCx0DfWEVM0mkIy5VMl" 
+       alt="Sentra Architecture" 
+       width="1000">
+</div>
 ---
 
 ## SYSTEM CHARACTERISTICS
