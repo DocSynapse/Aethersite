@@ -3,7 +3,7 @@ import { cn } from '../lib/utils'
 import { AnimatePresence, motion, type TargetAndTransition, type Transition, type Variant, type Variants } from 'motion/react'
 import React from 'react'
 
-export type PresetType = 'blur' | 'fade-in-blur' | 'scale' | 'fade' | 'slide'
+export type TextEffectPresetType = 'blur' | 'fade-in-blur' | 'scale' | 'fade' | 'slide'
 
 export type PerType = 'word' | 'char' | 'line'
 
@@ -16,7 +16,7 @@ export type TextEffectProps = {
         item?: Variants
     }
     className?: string
-    preset?: PresetType
+    preset?: TextEffectPresetType
     delay?: number
     speedReveal?: number
     speedSegment?: number

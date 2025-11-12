@@ -2,7 +2,7 @@
 import React, { type ReactNode } from 'react'
 import { motion, type Variants } from 'motion/react'
 
-export type PresetType = 'fade' | 'slide' | 'scale' | 'blur' | 'blur-slide' | 'zoom' | 'flip' | 'bounce' | 'rotate' | 'swing'
+export type AnimatedGroupPresetType = 'fade' | 'slide' | 'scale' | 'blur' | 'blur-slide' | 'zoom' | 'flip' | 'bounce' | 'rotate' | 'swing'
 
 export type AnimatedGroupProps = {
     children: ReactNode
@@ -11,7 +11,7 @@ export type AnimatedGroupProps = {
         container?: Variants
         item?: Variants
     }
-    preset?: PresetType
+    preset?: AnimatedGroupPresetType
     as?: React.ElementType
     asChild?: React.ElementType
 }
