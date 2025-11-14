@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.aitmpl.com)",
+      "WebFetch(domain:docs.aitmpl.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:davila7.github.io)",
+      "WebFetch(domain:aitmpl.com)",
+      "WebFetch(domain:discord.gg)",
+      "WebSearch",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm build)",
+      "Bash(pnpm build:*)",
+      "Bash(del:*)",
+      "Bash(git restore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(vercel:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

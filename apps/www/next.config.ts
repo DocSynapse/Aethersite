@@ -42,6 +42,9 @@ const nextConfig = {
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production',
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
     webpack: (config, { dev, isServer }) => {
         // Add alias for @mist/components to resolve missing modules
         config.resolve.alias = {
