@@ -7,9 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const ArtificialHero = () => {
-  const containerRef = useRef(null);
-  const canvasRef = useRef(null);
-  const grainCanvasRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const grainCanvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef(0);
   const scrollProgressRef = useRef(0);
   const timeRef = useRef(0);
@@ -78,8 +78,8 @@ export const ArtificialHero = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const grainCanvas = grainCanvasRef.current;
-    const ctx = canvas.getContext('2d');
-    const grainCtx = grainCanvas.getContext('2d');
+    const ctx = canvas?.getContext('2d');
+    const grainCtx = grainCanvas?.getContext('2d');
 
     const density = ' .:-=+*#%@';
 
@@ -133,7 +133,8 @@ export const ArtificialHero = () => {
     });
 
     const generateFilmGrain = (width: number, height: number, intensity = 0.15) => {
-      const imageData = grainCtx.createImageData(width, height);
+      if (!grainCtx) return null;
+      const imageData = grainCtx!.createImageData(width, height);
       const data = imageData.data;
 
       for (let i = 0; i < data.length; i += 4) {
@@ -148,6 +149,7 @@ export const ArtificialHero = () => {
     };
 
     const drawGlitchedOrb = (centerX: number, centerY: number, radius: number, hue: number, time: number, glitchIntensity: number) => {
+      if (!ctx) return;
       ctx.save();
 
       const shouldGlitch = Math.random() < 0.1 && glitchIntensity > 0.5;
@@ -170,6 +172,7 @@ export const ArtificialHero = () => {
       orbGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       ctx.fillStyle = orbGradient;
+      if (!canvas) return;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const centerRadius = radius * 0.3;
@@ -255,6 +258,7 @@ export const ArtificialHero = () => {
       timeRef.current += 0.016;
       const time = timeRef.current;
 
+      if (!canvas || !grainCanvas || !ctx || !grainCtx) return;
       const width = canvas.width = grainCanvas.width = window.innerWidth;
       const height = canvas.height = grainCanvas.height = window.innerHeight;
 
@@ -324,7 +328,9 @@ export const ArtificialHero = () => {
       grainCtx.clearRect(0, 0, width, height);
       const grainIntensity = 0.22 + Math.sin(time * 10) * 0.03;
       const grainImageData = generateFilmGrain(width, height, grainIntensity);
-      grainCtx.putImageData(grainImageData, 0, 0);
+      if (grainImageData) {
+        grainCtx.putImageData(grainImageData, 0, 0);
+      }
 
       if (params.glitchIntensity > 0.5) {
         grainCtx.globalCompositeOperation = 'screen';

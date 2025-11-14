@@ -45,7 +45,7 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-    webpack: (config, { dev, isServer }) => {
+    webpack: (config: any, { dev, isServer }: { dev: boolean; isServer: boolean }) => {
         // Add alias for @mist/components to resolve missing modules
         config.resolve.alias = {
             ...config.resolve.alias,
