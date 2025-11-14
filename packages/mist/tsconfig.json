@@ -4,7 +4,8 @@
     "baseUrl": "./",
     "paths": {
       "@docsynapse/core/*": ["./../core/src/*"],
-      "@mist/*" : ["./*"]
+      "@mist/*": ["./src/*"],
+      "@mist/components/*": ["./components/*"]
     }
   },
   "exclude": [
