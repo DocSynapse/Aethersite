@@ -1,0 +1,28 @@
+{
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "framework": "nextjs",
+  "outputDirectory": "apps/www/.next",
+  "devCommand": "pnpm dev",
+  "functions": {
+    "apps/www/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/apps/www/$1"
+    }
+  ],
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_APP_URL": "https://your-app-url.vercel.app",
+      "NODE_ENV": "production"
+    }
+  },
+  "framework": {
+    "name": "nextjs",
+    "version": "15.3.2"
+  }
+}

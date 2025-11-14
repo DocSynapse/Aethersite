@@ -1,12 +1,23 @@
 {
-  "buildCommand": "cd ../.. && pnpm --filter @docsynapse/www build",
+  "buildCommand": "pnpm build",
   "outputDirectory": ".next",
-  "devCommand": "cd ../.. && pnpm --filter @docsynapse/www dev",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@api_url"
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_API_URL": "@api_url",
+      "NEXT_PUBLIC_APP_URL": "https://your-app-url.vercel.app"
+    }
+  },
+  "functions": {
+    "pages/api/**/*.ts": {
+      "maxDuration": 30
+    },
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
   }
 }
 

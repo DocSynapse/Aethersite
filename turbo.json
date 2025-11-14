@@ -3,21 +3,38 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "next.config.ts"],
+      "passThroughEnv": ["NODE_ENV", "NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_APP_URL"]
     },
     "start": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
     },
     "lint": {
       "cache": false,
       "outputs": []
     },
+    "type-check": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
     "dev": {
+      "cache": false,
+      "persistent": true,
+      "passThroughEnv": ["NODE_ENV", "NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_APP_URL"]
+    },
+    "clean": {
       "cache": false
     },
     "registry:build": {
       "cache": false,
       "outputs": []
     }
-  }
+  },
+  "globalDependencies": [
+    "**/.env.*local",
+    "**/pnpm-lock.yaml"
+  ]
 }

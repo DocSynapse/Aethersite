@@ -5,9 +5,9 @@
     "paths": {
       "@/*": ["./*"],
       "@docsynapse/core/*" : ["../../packages/core/src/"],
-      "@docsynapse/mist/*" : ["../../packages/mist-kit/"],
-      "@docsynapse/dusk/*" : ["../../packages/dusk-kit/"],
-      "@mist/*" : ["../../packages/mist-kit/"]
+      "@docsynapse/mist/*" : ["../../packages/mist/src/"],
+      "@docsynapse/dusk/*" : ["../../packages/dusk/src/"],
+      "@mist/*" : ["../../packages/mist/src/"]
     }
   },
   "include": [
